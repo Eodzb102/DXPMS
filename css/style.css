@@ -108,16 +108,22 @@ main {
   border-bottom: 2px solid rgb(55, 53, 47);
 }
 
+.option_wrap {
+  overflow-x: scroll;
+}
+
 .option_filter {
   display: flex;
   padding-left: 40px;
+  width: max-content;
+  align-items: center;
 }
 
-.option_filter > div {
+.option_filter_item {
   position: relative;
 }
 
-.option_filter button {
+.option_filter_item button {
   display: block;
   margin-right: 8px;
   border-radius: 14px;
@@ -128,20 +134,29 @@ main {
   box-sizing: border-box;
 }
 
+.text_search button {
+  all: unset;
+}
+
 .option_filter button span {
   margin-right: -4px;
 }
 
-.option_filter ul li:hover,
-.option_filter button:hover {
+.option_filter_item button:hover {
   background-color: rgba(55, 53, 47, 0.08);
 }
 
-.option_filter .active ul {
+.option_filter_item.active ul {
   display: block;
 }
 
-.option_filter ul {
+.option_filter .selected button {
+  border-color: rgba(35, 131, 226, 0.35);
+  background-color: rgba(35, 131, 226, 0.03);
+  color: rgb(35, 131, 226);
+}
+
+.option_filter_item ul {
   display: none;
   position: absolute;
   top: 34px;
@@ -165,4 +180,8 @@ main {
   margin-right: 6px;
   height: 15px;
   vertical-align: middle;
+}
+
+.option_control ul {
+  display: flex;
 }

@@ -55,131 +55,132 @@
               <li><button>Timeline</button></li>
               <li><button>Board</button></li>
             </ul>
-            <div class="option_filter">
-              <div class="active">
-                <button>플랫폼<span class="material-symbols-outlined">expand_more</span></button>
-                <ul>
-                  <li>
-                    <label for=""><input type="checkbox" />홈페이지</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" />쇼핑몰</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" />관리자</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" />고객센터</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" />마이페이지</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" />내부시스템</label>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <button>작업분류<span class="material-symbols-outlined">expand_more</span></button>
-                <ul>
-                  <li>
-                    <label for=""><input type="checkbox" />신규개발</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" />확인요청</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" />오류</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" />수정/개선</label>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <button>작성자<span class="material-symbols-outlined">expand_more</span></button>
-                <ul>
-                  <li>
-                    <label for=""><input type="checkbox" />홍길동</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" />고길동</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" />나길동</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" />다길동</label>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <button>작업파트<span class="material-symbols-outlined">expand_more</span></button>
-                <ul>
-                  <li>
-                    <label for=""><input type="checkbox" /> 기획(pla)</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" /> 디자인(des)</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" /> 퍼블리싱(pub)</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" /> 개발(dev)</label>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <button>중요도<span class="material-symbols-outlined">expand_more</span></button>
-                <ul>
-                  <li>
-                    <label for=""><input type="checkbox" /> 상</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" /> 중</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" /> 하</label>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <button>진행상태<span class="material-symbols-outlined">expand_more</span></button>
-                <ul>
-                  <li>
-                    <label for=""><input type="checkbox" /> 업무요청</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" /> 진행중</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" /> 최종완료</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" /> 일시중지</label>
-                  </li>
-                  <li>
-                    <label for=""><input type="checkbox" /> 반려</label>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <label for=""><input type="text" /></label>
-                <button>검색<span class="material-symbols-outlined">search</span></button>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <button>초기화</button>
-                  </li>
-                  <li>
-                    <button>검색</button>
-                  </li>
-                  <li>
-                    <button>업무요청</button>
-                  </li>
-                </ul>
+            <div class="option_wrap">
+              <div class="option_filter">
+                <div class="option_filter_item active selected">
+                  <button>플랫폼<span class="material-symbols-outlined">expand_more</span></button>
+                  <ul>
+                    <li>
+                      <label><input type="checkbox" />홈페이지</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" name="mall" />쇼핑몰</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" />관리자</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" />고객센터</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" />마이페이지</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" />내부시스템</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="option_filter_item">
+                  <button>작업분류<span class="material-symbols-outlined">expand_more</span></button>
+                  <ul>
+                    <li>
+                      <label><input type="checkbox" />신규개발</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" />확인요청</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" />오류</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" />수정/개선</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="option_filter_item">
+                  <button>작성자<span class="material-symbols-outlined">expand_more</span></button>
+                  <ul>
+                    <li>
+                      <label><input type="checkbox" />홍길동</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" />고길동</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" />나길동</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" />다길동</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="option_filter_item">
+                  <button>작업파트<span class="material-symbols-outlined">expand_more</span></button>
+                  <ul>
+                    <li>
+                      <label><input type="checkbox" /> 기획(pla)</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> 디자인(des)</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> 퍼블리싱(pub)</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> 개발(dev)</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="option_filter_item">
+                  <button>중요도<span class="material-symbols-outlined">expand_more</span></button>
+                  <ul>
+                    <li>
+                      <label><input type="checkbox" /> 상</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> 중</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> 하</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="option_filter_item">
+                  <button>진행상태<span class="material-symbols-outlined">expand_more</span></button>
+                  <ul>
+                    <li>
+                      <label><input type="checkbox" /> 업무요청</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> 진행중</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> 최종완료</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> 일시중지</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> 반려</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="option_text_search">
+                  <label>
+                    <input type="text" />
+                    <button>검색<span class="material-symbols-outlined">search</span></button>
+                  </label>
+                </div>
+                <div class="option_control">
+                  <ul>
+                    <li>
+                      <button>초기화</button>
+                    </li>
+                    <li>
+                      <button>업무요청</button>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
@@ -291,33 +292,33 @@
             </div>
           </section>
 
-          <section class="content" style="display: none">
+          <section class="content" style="display: block">
             <h2>업무요청</h2>
             <form action="">
               <fieldset>
                 <legend>플랫폼</legend>
                 <div>
-                  <label for=""><input type="radio" /> 홈페이지</label>
-                  <label for=""><input type="radio" /> 쇼핑몰</label>
-                  <label for=""><input type="radio" /> 관리자</label>
-                  <label for=""><input type="radio" /> 고객센터/마이페이지</label>
+                  <label><input type="radio" /> 홈페이지</label>
+                  <label><input type="radio" /> 쇼핑몰</label>
+                  <label><input type="radio" /> 관리자</label>
+                  <label><input type="radio" /> 고객센터/마이페이지</label>
                 </div>
               </fieldset>
               <fieldset>
                 <legend>작업분류</legend>
                 <div>
-                  <label for=""><input type="radio" /> 수정/개선</label>
-                  <label for=""><input type="radio" /> 오류</label>
-                  <label for=""><input type="radio" /> 확인요청</label>
-                  <label for=""><input type="radio" /> 신규개발</label>
+                  <label><input type="radio" /> 수정/개선</label>
+                  <label><input type="radio" /> 오류</label>
+                  <label><input type="radio" /> 확인요청</label>
+                  <label><input type="radio" /> 신규개발</label>
                 </div>
               </fieldset>
               <fieldset>
                 <legend>중요도</legend>
                 <div>
-                  <label for=""><input type="radio" /> 상</label>
-                  <label for=""><input type="radio" /> 중</label>
-                  <label for=""><input type="radio" /> 하</label>
+                  <label><input type="radio" /> 상</label>
+                  <label><input type="radio" /> 중</label>
+                  <label><input type="radio" /> 하</label>
                 </div>
               </fieldset>
               <fieldset>
@@ -329,27 +330,27 @@
               <fieldset>
                 <legend>작업파트</legend>
                 <div>
-                  <label for=""><input type="checkbox" /> 기획(pla)</label>
-                  <label for=""><input type="checkbox" /> 디자인(des)</label>
-                  <label for=""><input type="checkbox" /> 퍼블리싱(pub)</label>
-                  <label for=""><input type="checkbox" /> 개발(dev)</label>
+                  <label><input type="checkbox" /> 기획(pla)</label>
+                  <label><input type="checkbox" /> 디자인(des)</label>
+                  <label><input type="checkbox" /> 퍼블리싱(pub)</label>
+                  <label><input type="checkbox" /> 개발(dev)</label>
                 </div>
               </fieldset>
               <fieldset>
                 <legend>작업 일정</legend>
                 <div>
-                  <label for="">시작일 <input type="date" /></label>
-                  <label for="">종료일 <input type="date" /></label>
+                  <label>시작일 <input type="date" /></label>
+                  <label>종료일 <input type="date" /></label>
                 </div>
               </fieldset>
               <fieldset>
                 <legend>진행상태</legend>
                 <div>
-                  <label for=""><input type="radio" /> 업무요청</label>
-                  <label for=""><input type="radio" /> 진행중</label>
-                  <label for=""><input type="radio" /> 일시중지</label>
-                  <label for=""><input type="radio" /> 최종완료</label>
-                  <label for=""><input type="radio" /> 반려</label>
+                  <label><input type="radio" /> 업무요청</label>
+                  <label><input type="radio" /> 진행중</label>
+                  <label><input type="radio" /> 일시중지</label>
+                  <label><input type="radio" /> 최종완료</label>
+                  <label><input type="radio" /> 반려</label>
                 </div>
               </fieldset>
               <fieldset>
