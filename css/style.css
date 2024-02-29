@@ -1,0 +1,168 @@
+body {
+  font-family: 'Pretendard', '-apple-system', 'BlinkMacSystemFont', system-ui, 'Roboto', 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  font-size: 16px;
+  height: 100vh;
+  overflow: hidden;
+  color: #000000c7;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #091e4224;
+}
+
+.header_wrap {
+  padding: 0 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heaer_user_info {
+  position: relative;
+}
+
+.heaer_user_info button {
+  display: flex;
+}
+
+.heaer_user_info img {
+  margin-left: 10px;
+  transform: rotate(180deg);
+}
+
+.heaer_user_info ul {
+  display: none;
+  width: 100%;
+  padding: 14px 0;
+  position: absolute;
+  top: 25px;
+  background-color: #fff;
+  border: 1px solid #091e4224;
+}
+
+.heaer_user_info ul li:first-child {
+  margin-bottom: 12px;
+}
+
+.heaer_user_info.open img {
+  transform: rotate(0);
+}
+
+.heaer_user_info.open ul {
+  display: block;
+  text-align: center;
+}
+
+.cont_wrap {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+.lnb {
+  width: 240px;
+  height: 100%;
+  background-color: #f8fafd;
+  border-right: 1px solid #bdc1c6;
+}
+
+.lnb li a {
+  display: block;
+  padding: 4px 12px;
+}
+
+.lnb li ul {
+  display: none;
+}
+
+.lnb li.active a {
+  background-color: #e8f0fe;
+}
+
+main {
+  overflow-y: scroll;
+  width: calc(100% - 240px);
+}
+
+.option_view {
+  margin: 30px 0 20px;
+  padding-left: 46px;
+  display: flex;
+  border-bottom: 1px solid rgb(233, 233, 231);
+}
+
+.option_view li {
+  margin-right: 20px;
+  padding-bottom: 10px;
+}
+
+.option_view li button {
+  text-transform: uppercase;
+}
+
+.option_view li.active {
+  font-weight: 700;
+  border-bottom: 2px solid rgb(55, 53, 47);
+}
+
+.option_filter {
+  display: flex;
+  padding-left: 40px;
+}
+
+.option_filter > div {
+  position: relative;
+}
+
+.option_filter button {
+  display: block;
+  margin-right: 8px;
+  border-radius: 14px;
+  padding: 0 12px;
+  height: 26px;
+  line-height: 26px;
+  border: 1px solid rgba(55, 53, 47, 0.16);
+  box-sizing: border-box;
+}
+
+.option_filter button span {
+  margin-right: -4px;
+}
+
+.option_filter ul li:hover,
+.option_filter button:hover {
+  background-color: rgba(55, 53, 47, 0.08);
+}
+
+.option_filter .active ul {
+  display: block;
+}
+
+.option_filter ul {
+  display: none;
+  position: absolute;
+  top: 34px;
+  width: max-content;
+  padding: 10px 4px;
+  border-radius: 6px;
+  background: white;
+  backdrop-filter: none;
+  max-width: calc(100vw - 24px);
+  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
+  overflow: hidden;
+}
+
+.option_filter ul li {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.option_filter li input {
+  margin-right: 6px;
+  height: 15px;
+  vertical-align: middle;
+}
