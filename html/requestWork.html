@@ -52,9 +52,9 @@
         <main>
           <section class="option_area">
             <ul class="option_view">
-              <li class="active"><button>List</button></li>
-              <li><button>Timeline</button></li>
-              <li><button>Board</button></li>
+              <li data-viewtype="list_wrap"><button>List</button></li>
+              <li data-viewtype="timeline_wrap"><button>Timeline</button></li>
+              <li class="active" data-viewtype="board_wrap"><button>Board</button></li>
             </ul>
             <div class="option_wrap">
               <div class="option_filter">
@@ -175,10 +175,10 @@
                 </div>
                 <div class="option_control">
                   <ul>
-                    <li>
+                    <li class="option_cancel">
                       <button>초기화</button>
                     </li>
-                    <li>
+                    <li class="new_request">
                       <button>업무요청</button>
                     </li>
                   </ul>
@@ -187,7 +187,7 @@
             </div>
           </section>
           <section class="view_area">
-            <div class="table_wrap" style="display: block">
+            <div class="list_wrap">
               <div class="table_scroll">
                 <table class="table_view">
                   <thead class="table_head">
@@ -264,10 +264,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>기획</p>
-                          <p>디자인</p>
-                          <p>퍼블리싱</p>
-                          <p>개발</p>
+                          <p>pla</p>
+                          <p>des</p>
+                          <p>pub</p>
+                          <p>dev</p>
                         </div>
                       </td>
                       <td>
@@ -338,10 +338,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>기획</p>
-                          <p>디자인</p>
-                          <p>퍼블리싱</p>
-                          <p>개발</p>
+                          <p>pla</p>
+                          <p>des</p>
+                          <p>pub</p>
+                          <p>dev</p>
                         </div>
                       </td>
                       <td>
@@ -409,10 +409,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>기획</p>
-                          <p>디자인</p>
-                          <p>퍼블리싱</p>
-                          <p>개발</p>
+                          <p>pla</p>
+                          <p>des</p>
+                          <p>pub</p>
+                          <p>dev</p>
                         </div>
                       </td>
                       <td>
@@ -482,8 +482,8 @@
                       </td>
                       <td>
                         <div>
-                          <p>기획</p>
-                          <p>디자인</p>
+                          <p>pla</p>
+                          <p>des</p>
                         </div>
                       </td>
                       <td>
@@ -552,10 +552,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>기획</p>
-                          <p>디자인</p>
-                          <p>퍼블리싱</p>
-                          <p>개발</p>
+                          <p>pla</p>
+                          <p>des</p>
+                          <p>pub</p>
+                          <p>dev</p>
                         </div>
                       </td>
                       <td>
@@ -624,10 +624,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>기획</p>
-                          <p>디자인</p>
-                          <p>퍼블리싱</p>
-                          <p>개발</p>
+                          <p>pla</p>
+                          <p>des</p>
+                          <p>pub</p>
+                          <p>dev</p>
                         </div>
                       </td>
                       <td>
@@ -694,10 +694,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>기획</p>
-                          <p>디자인</p>
-                          <p>퍼블리싱</p>
-                          <p>개발</p>
+                          <p>pla</p>
+                          <p>des</p>
+                          <p>pub</p>
+                          <p>dev</p>
                         </div>
                       </td>
                       <td>
@@ -765,10 +765,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>기획</p>
-                          <p>디자인</p>
-                          <p>퍼블리싱</p>
-                          <p>개발</p>
+                          <p>pla</p>
+                          <p>des</p>
+                          <p>pub</p>
+                          <p>dev</p>
                         </div>
                       </td>
                       <td>
@@ -839,10 +839,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>기획</p>
-                          <p>디자인</p>
-                          <p>퍼블리싱</p>
-                          <p>개발</p>
+                          <p>pla</p>
+                          <p>des</p>
+                          <p>pub</p>
+                          <p>dev</p>
                         </div>
                       </td>
                       <td>
@@ -911,10 +911,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>기획</p>
-                          <p>디자인</p>
-                          <p>퍼블리싱</p>
-                          <p>개발</p>
+                          <p>pla</p>
+                          <p>des</p>
+                          <p>pub</p>
+                          <p>dev</p>
                         </div>
                       </td>
                       <td>
@@ -968,29 +968,80 @@
               </div>
             </div>
             <div class="timeline_wrap"></div>
-            <div class="board_wrap" style="display: none">
+            <div class="board_wrap">
               <div class="flex_box">
                 <div class="board_progress_wrap board_item">
                   <div class="board_progress board_title">업무요청 <span class="progress_no">13</span></div>
                   <div class="notepad_wrap">
-                    <div class="notepad">
-                      <div class="open">신규개발 요청드립닏다.</div>
-                      <p class="done_date">완료 <span>2024.01.18</span></p>
-                      <div class="flex_box">
-                        <dl>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다. 만약에 두줄이 넘어가면 이렇게 보일거에요... 짜잔 아직 안 넘어 갔습니다. 이제는 넘어갔겠죠</div>
+                      <p class="done_date">완료희망일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
                           <dt>작성자</dt>
                           <dd>홍길동</dd>
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd>상</dd>
+                          <dd><span class="material-symbols-outlined"> stat_1 </span>하</dd>
                         </dl>
                       </div>
+                      <ul class="platform">
+                        <li class="homepage">홈페이지</li>
+                        <li class="mall">쇼핑몰</li>
+                        <li class="admin">관리자</li>
+                        <li class="customerService">고객센터</li>
+                        <li class="mypage">마이페이지</li>
+                        <li class="monteSystem">내부시스템</li>
+                      </ul>
                       <ul class="resource">
-                        <li class="pla">기획</li>
-                        <li class="des">디자인</li>
-                        <li class="pub">퍼블</li>
-                        <li class="dev">개발</li>
+                        <li class="pla">pla</li>
+                        <li class="dev">dev</li>
+                      </ul>
+                    </div>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">완료희망일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
+                          <dt>작성자</dt>
+                          <dd>홍길동</dd>
+                        </dl>
+                        <dl class="importance">
+                          <dt>중요도</dt>
+                          <dd><span class="material-symbols-outlined"> stat_2 </span>중</dd>
+                        </dl>
+                      </div>
+                      <ul class="platform">
+                        <li class="homepage">홈페이지</li>
+                      </ul>
+                      <ul class="resource">
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
+                      </ul>
+                    </div>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">완료희망일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
+                          <dt>작성자</dt>
+                          <dd>홍길동</dd>
+                        </dl>
+                        <dl class="importance">
+                          <dt>중요도</dt>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                        </dl>
+                      </div>
+                      <ul class="platform">
+                        <li class="mypage">마이페이지</li>
+                      </ul>
+                      <ul class="resource">
+                        <li class="pla">pla</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
                       </ul>
                     </div>
                   </div>
@@ -998,24 +1049,27 @@
                 <div class="board_inprogress_wrap board_item">
                   <div class="board_inprogress board_title">진행중 <span class="progress_no">13</span></div>
                   <div class="notepad_wrap">
-                    <div class="notepad">
-                      <div class="open">신규개발 요청드립닏다.</div>
-                      <p class="done_date">완료 <span>2024.01.18</span></p>
-                      <div class="flex_box">
-                        <dl>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다. 그랬는데 이래돼써요 무슨일이죠?</div>
+                      <p class="done_date">완료희망일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
                           <dt>작성자</dt>
                           <dd>홍길동</dd>
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd>상</dd>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
                         </dl>
                       </div>
+                      <ul class="platform">
+                        <li class="customerService">고객센터</li>
+                      </ul>
                       <ul class="resource">
-                        <li class="pla">기획</li>
-                        <li class="des">디자인</li>
-                        <li class="pub">퍼블</li>
-                        <li class="dev">개발</li>
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
                       </ul>
                     </div>
                   </div>
@@ -1023,24 +1077,234 @@
                 <div class="board_completion_wrap board_item">
                   <div class="board_completion board_title">최종완료 <span class="progress_no">13</span></div>
                   <div class="notepad_wrap">
-                    <div class="notepad">
-                      <div class="open">신규개발 요청드립닏다.</div>
-                      <p class="done_date">완료 <span>2024.01.18</span></p>
-                      <div class="flex_box">
-                        <dl>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">최종완료일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
                           <dt>작성자</dt>
                           <dd>홍길동</dd>
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd>상</dd>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
                         </dl>
                       </div>
+                      <ul class="platform">
+                        <li class="admin">관리자</li>
+                      </ul>
                       <ul class="resource">
-                        <li class="pla">기획</li>
-                        <li class="des">디자인</li>
-                        <li class="pub">퍼블</li>
-                        <li class="dev">개발</li>
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
+                      </ul>
+                    </div>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">최종완료일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
+                          <dt>작성자</dt>
+                          <dd>홍길동</dd>
+                        </dl>
+                        <dl class="importance">
+                          <dt>중요도</dt>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                        </dl>
+                      </div>
+                      <ul class="platform">
+                        <li class="admin">관리자</li>
+                      </ul>
+                      <ul class="resource">
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
+                      </ul>
+                    </div>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">최종완료일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
+                          <dt>작성자</dt>
+                          <dd>홍길동</dd>
+                        </dl>
+                        <dl class="importance">
+                          <dt>중요도</dt>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                        </dl>
+                      </div>
+                      <ul class="platform">
+                        <li class="admin">관리자</li>
+                      </ul>
+                      <ul class="resource">
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
+                      </ul>
+                    </div>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">최종완료일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
+                          <dt>작성자</dt>
+                          <dd>홍길동</dd>
+                        </dl>
+                        <dl class="importance">
+                          <dt>중요도</dt>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                        </dl>
+                      </div>
+                      <ul class="platform">
+                        <li class="admin">관리자</li>
+                      </ul>
+                      <ul class="resource">
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
+                      </ul>
+                    </div>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">최종완료일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
+                          <dt>작성자</dt>
+                          <dd>홍길동</dd>
+                        </dl>
+                        <dl class="importance">
+                          <dt>중요도</dt>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                        </dl>
+                      </div>
+                      <ul class="platform">
+                        <li class="admin">관리자</li>
+                      </ul>
+                      <ul class="resource">
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
+                      </ul>
+                    </div>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">최종완료일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
+                          <dt>작성자</dt>
+                          <dd>홍길동</dd>
+                        </dl>
+                        <dl class="importance">
+                          <dt>중요도</dt>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                        </dl>
+                      </div>
+                      <ul class="platform">
+                        <li class="admin">관리자</li>
+                      </ul>
+                      <ul class="resource">
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
+                      </ul>
+                    </div>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">최종완료일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
+                          <dt>작성자</dt>
+                          <dd>홍길동</dd>
+                        </dl>
+                        <dl class="importance">
+                          <dt>중요도</dt>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                        </dl>
+                      </div>
+                      <ul class="platform">
+                        <li class="admin">관리자</li>
+                      </ul>
+                      <ul class="resource">
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
+                      </ul>
+                    </div>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">최종완료일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
+                          <dt>작성자</dt>
+                          <dd>홍길동</dd>
+                        </dl>
+                        <dl class="importance">
+                          <dt>중요도</dt>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                        </dl>
+                      </div>
+                      <ul class="platform">
+                        <li class="admin">관리자</li>
+                      </ul>
+                      <ul class="resource">
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
+                      </ul>
+                    </div>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">최종완료일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
+                          <dt>작성자</dt>
+                          <dd>홍길동</dd>
+                        </dl>
+                        <dl class="importance">
+                          <dt>중요도</dt>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                        </dl>
+                      </div>
+                      <ul class="platform">
+                        <li class="admin">관리자</li>
+                      </ul>
+                      <ul class="resource">
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
+                      </ul>
+                    </div>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">최종완료일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
+                          <dt>작성자</dt>
+                          <dd>홍길동</dd>
+                        </dl>
+                        <dl class="importance">
+                          <dt>중요도</dt>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                        </dl>
+                      </div>
+                      <ul class="platform">
+                        <li class="admin">관리자</li>
+                      </ul>
+                      <ul class="resource">
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
                       </ul>
                     </div>
                   </div>
@@ -1048,24 +1312,27 @@
                 <div class="board_hold_wrap board_item">
                   <div class="board_hold board_title">일시중지 <span class="progress_no">13</span></div>
                   <div class="notepad_wrap">
-                    <div class="notepad">
-                      <div class="open">신규개발 요청드립닏다.</div>
-                      <p class="done_date">완료 <span>2024.01.18</span></p>
-                      <div class="flex_box">
-                        <dl>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">완료희망일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
                           <dt>작성자</dt>
                           <dd>홍길동</dd>
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd>상</dd>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
                         </dl>
                       </div>
+                      <ul class="platform">
+                        <li class="monteSystem">내부시스템</li>
+                      </ul>
                       <ul class="resource">
-                        <li class="pla">기획</li>
-                        <li class="des">디자인</li>
-                        <li class="pub">퍼블</li>
-                        <li class="dev">개발</li>
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
                       </ul>
                     </div>
                   </div>
@@ -1073,24 +1340,27 @@
                 <div class="board_reject_wrap board_item">
                   <div class="board_reject board_title">반려 <span class="progress_no">13</span></div>
                   <div class="notepad_wrap">
-                    <div class="notepad">
-                      <div class="open">신규개발 요청드립닏다.</div>
-                      <p class="done_date">완료 <span>2024.01.18</span></p>
-                      <div class="flex_box">
-                        <dl>
+                    <div class="notepad open">
+                      <div class="note_title">신규개발 요청드립닏다.</div>
+                      <p class="done_date">최종완료일 <span>2024.01.18</span></p>
+                      <div>
+                        <dl class="writer">
                           <dt>작성자</dt>
                           <dd>홍길동</dd>
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd>상</dd>
+                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
                         </dl>
                       </div>
+                      <ul class="platform">
+                        <li class="monteSystem">내부시스템</li>
+                      </ul>
                       <ul class="resource">
-                        <li class="pla">기획</li>
-                        <li class="des">디자인</li>
-                        <li class="pub">퍼블</li>
-                        <li class="dev">개발</li>
+                        <li class="pla">pla</li>
+                        <li class="des">des</li>
+                        <li class="pub">pub</li>
+                        <li class="dev">dev</li>
                       </ul>
                     </div>
                   </div>
@@ -1127,7 +1397,7 @@
                     <div>
                       <textarea name="" id="" cols="30" rows="3" placeholder="업무상 필요한 내용을 입력해주세요."></textarea>
                       <div class="buttons">
-                        <label><input type="file" multiple /></label><button class="save">등록</button>
+                        <label><input type="file" multiple /></label><button class="comment_save">등록</button>
                       </div>
                     </div>
                   </fieldset>
@@ -1167,7 +1437,8 @@
                       <label><input type="checkbox" /> 홈페이지</label>
                       <label><input type="checkbox" /> 쇼핑몰</label>
                       <label><input type="checkbox" /> 관리자</label>
-                      <label><input type="checkbox" /> 고객센터/마이페이지</label>
+                      <label><input type="checkbox" /> 고객센터</label>
+                      <label><input type="checkbox" /> 마이페이지</label>
                       <label><input type="checkbox" /> 내부시스템</label>
                     </div>
                   </fieldset>
@@ -1194,7 +1465,7 @@
                       <input type="date" />
                     </div>
                   </fieldset>
-                  <div class="disabled">
+                  <div>
                     <!-- disabled -->
                     <fieldset>
                       <legend>작업파트</legend>
@@ -1239,12 +1510,12 @@
                     </div>
                   </div>
                   <div class="writing_time">
-                    <p>작성일시 : <span> 2023년 12월 29일 오전 11:09</span></p>
-                    <p>업데이트 : <span> 2024년 03월 05일 오전 11:09</span></p>
+                    <p>작성일시 : <span> 2023년 12월 29일 오전 11:09 홍길동</span></p>
+                    <p>업데이트 : <span> 2024년 03월 05일 오전 11:09 홍길동</span></p>
                   </div>
                 </div>
               </form>
-              <div class="buttons fixed"><button class="save">저장</button><button class="cancel">취소</button></div>
+              <div class="buttons fixed"><button class="request_save">저장</button><button class="request_cancel">취소</button></div>
             </div>
           </section>
         </main>

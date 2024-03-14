@@ -1,10 +1,18 @@
 $(function () {
-  $('.open').on('click', function () {
+  view();
+
+  $('.option_view li').on('click', function () {
+    $('.option_view li').removeClass('active');
+    $(this).addClass('active');
+    view();
+  });
+
+  $('.open, .new_request').on('click', function () {
     $('.modal').addClass('on');
   });
 
-  $('.cancel').on('click', function () {
-    $(this).parents('.on').removeClass('on');
+  $('.request_cancel').on('click', function (e) {
+    $('.modal').removeClass('on');
   });
 
   $('.option_filter_item').on('click', function () {
@@ -16,4 +24,10 @@ $(function () {
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
   });
+
+  function view() {
+    var viewtype = $('.option_view li.active').data('viewtype');
+    $('.view_area > div').removeClass('on');
+    $('.' + viewtype).addClass('on');
+  }
 });
