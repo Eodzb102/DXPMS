@@ -56,6 +56,10 @@ cite {
 
 table {
   border-spacing: 0;
+  padding: 0;
+  border: 0;
+  border-spacing: 0px;
+  border-collapse: collapse;
 }
 
 table caption {
@@ -67,6 +71,11 @@ table caption {
   height: 1px;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
+}
+
+th,
+td {
+  padding: 0;
 }
 
 fieldset {

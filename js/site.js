@@ -15,7 +15,8 @@ $(function () {
     $('.modal').removeClass('on');
   });
 
-  $('.option_filter_item').on('click', function () {
+  $('.option_filter_item').on('click', function (e) {
+    e.stopPropagation();
     $(this).siblings().removeClass('active');
     $(this).toggleClass('active');
   });
@@ -30,4 +31,11 @@ $(function () {
     $('.view_area > div').removeClass('on');
     $('.' + viewtype).addClass('on');
   }
+
+  $(document).click(function (e) {
+    if (e.target.className == 'option_filter_item active') {
+      return false;
+    }
+    $('.option_filter_item').removeClass('active');
+  });
 });

@@ -10,7 +10,6 @@ body {
 }
 
 /* 공통 */
-
 .fixed {
   position: absolute;
 }
@@ -41,7 +40,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.completion {
+.work_completion {
   background-color: red;
   padding: 4px 32px;
   color: #fff;
@@ -75,6 +74,154 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* colors */
+.pla {
+  border: 1px solid rgb(9, 48, 117);
+  color: rgb(9, 48, 117);
+}
+
+.des {
+  border: 1px solid rgb(9, 117, 13);
+  color: rgb(9, 117, 13);
+}
+
+.pub {
+  border: 1px solid rgb(117, 108, 9);
+  color: rgb(117, 108, 9);
+}
+
+.dev {
+  border: 1px solid rgb(165, 14, 14);
+  color: rgb(165, 14, 14);
+}
+
+.mall {
+  background-color: rgb(255, 226, 221);
+  color: rgb(93, 23, 21);
+}
+
+.homepage {
+  background-color: rgba(227, 226, 224, 0.5);
+  color: rgb(50, 48, 44);
+}
+
+.mypage {
+  background-color: rgb(211, 211, 239);
+  color: rgb(32, 24, 71);
+}
+
+.customerService {
+  background-color: rgb(227, 226, 224);
+  color: rgb(50, 48, 44);
+}
+
+.admin {
+  background-color: rgb(211, 229, 239);
+  color: rgb(24, 51, 71);
+}
+
+.monteSystem {
+  background-color: rgb(253, 236, 200);
+  color: rgb(64, 44, 27);
+}
+
+/* 진행상태 */
+.board_progress_wrap {
+  background: rgba(241, 248, 251, 0.7);
+}
+
+.progress span,
+.board_progress {
+  background-color: rgb(211, 229, 239);
+  color: rgb(24, 51, 71);
+}
+
+.board_inprogress_wrap {
+  background: rgba(244, 248, 243, 0.7);
+}
+
+.inprogress span,
+.board_inprogress {
+  background-color: rgb(219, 237, 219);
+  color: rgb(28, 56, 41);
+}
+
+.board_completion_wrap {
+  background: rgba(249, 246, 252, 0.7);
+}
+
+.completion span,
+.board_completion {
+  background-color: rgb(232, 222, 238);
+  color: rgb(65, 36, 84);
+}
+
+.board_hold_wrap {
+  background: rgba(252, 245, 242, 0.7);
+}
+
+.hold span,
+.board_hold {
+  background-color: rgb(250, 222, 201);
+  color: rgb(73, 41, 14);
+}
+
+.board_reject_wrap {
+  background: rgba(253, 245, 243, 0.7);
+}
+
+.reject span,
+.board_reject {
+  background-color: rgb(255, 226, 221);
+  color: rgb(93, 23, 21);
+}
+
+/* bullet */
+.list_progresse span::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.progress span::before {
+  background-color: rgb(91, 151, 189);
+}
+
+.inprogress span::before {
+  background-color: rgb(108, 155, 125);
+}
+
+.completion span::before {
+  background-color: rgb(167, 130, 195);
+}
+
+.hold span::before {
+  background-color: rgb(215, 129, 58);
+}
+
+.reject span::before {
+  background-color: rgb(225, 111, 100);
+}
+
+/* 중요도 */
+.high {
+  color: red;
+}
+
+.middle {
+  color: orange;
+}
+
+.low {
+  color: rgb(21, 21, 184);
 }
 
 /* paging */
@@ -164,21 +311,6 @@ body {
     padding: 0 6px;
     font-size: 12px;
   }
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(9, 30, 66, 0.54);
-  overflow: hidden;
-  left: 0;
-  top: 0;
-}
-
-.modal.on {
-  display: block;
 }
 
 /* header */
@@ -345,10 +477,6 @@ main {
   white-space: nowrap;
 }
 
-.material-symbols-outlined {
-  margin-left: 4px;
-}
-
 .option_filter_item ul {
   display: none;
   position: absolute;
@@ -365,7 +493,6 @@ main {
 }
 
 .option_filter_item li {
-  border-radius: 4px;
   font-size: 14px;
 }
 
@@ -399,65 +526,240 @@ main {
 /* 리스트형 */
 .table_scroll {
   overflow-x: scroll;
-  padding-right: 40px;
+  padding: 0 40px;
 }
 
 .table_view {
   table-layout: fixed;
-  border-collapse: collapse;
 }
 
 .table_view tr {
   border-bottom: 1px solid rgba(15, 15, 15, 0.08);
 }
 
-.table_head th {
+th {
   text-align: left;
 }
 
-.table_head .material-symbols-outlined {
-  margin: 0;
+th .material-symbols-outlined,
+td .material-symbols-outlined {
   font-size: 18px;
 }
 
-.table_head .active .material-symbols-outlined {
+th .active .material-symbols-outlined {
   color: red;
 }
 
-.table_head th > p {
+th > p {
   margin: 4px 12px;
   white-space: nowrap;
 }
+
+th.center > p {
+  margin: 4px;
+}
+
+
 
 .table_body div {
   padding: 4px 12px;
   border-right: 1px solid rgba(15, 15, 15, 0.08);
   white-space: nowrap;
+  height: 26px;
+}
+
+td div:has(.platform, .resource) {
+  /* padding: 4px 6px; */
+}
+
+td p:has(.material-symbols-outlined) {
+  width: 14px;
+  overflow: hidden;
 }
 
 .table_body tr button,
 .table_body tr p {
   font-size: 14px;
   display: inline-block;
-  margin: 4px 0;
   white-space: nowrap;
   max-width: 280px;
   overflow: hidden;
   text-overflow: ellipsis;
-  vertical-align: middle;
+  line-height: 26px;
 }
 
-.table_view td {
-  margin: 0px 40px;
+.table_body .platform {
+  flex-wrap: nowrap;
 }
 
-.view_area {
-  padding-left: 40px;
+.table_view td ul {
+  display: flex;
+}
+
+.center {
+  text-align: center;
+}
+
+.list_progresse span {
+  position: relative;
+  font-size: 12px;
+  padding: 4px 8px 4px 14px;
+  border-radius: 10px;
+}
+
+/* 보드형 */
+.board_wrap {
+  padding: 0 40px;
+  box-sizing: border-box;
   height: calc(100vh - 200px);
   overflow-y: scroll;
 }
 
+.board_wrap .flex_box {
+  justify-content: space-between;
+}
+
+.board_item {
+  width: calc(20% - 14px);
+  box-sizing: border-box;
+  height: max-content;
+}
+
+.board_title {
+  position: relative;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.notepad_wrap {
+  padding: 12px 8px;
+}
+
+.notepad {
+  position: relative;
+  padding: 8px;
+  background-color: #fff;
+  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgb(207, 207, 207) 0px 2px 4px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.notepad:last-child {
+  margin-bottom: 0;
+}
+
+.notepad .flex_box {
+  justify-content: space-around;
+}
+
+.note_title {
+  font-size: 16px;
+  width: calc(100% - 16px);
+  margin-bottom: 6px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical
+}
+
+.done_date {
+  margin-bottom: 4px;
+}
+
+.notepad .writer,
+.notepad .importance {
+  display: flex;
+}
+
+.notepad .writer dd {
+  margin-left: 8px;
+}
+
+.done_date span {
+  color: red;
+  font-weight: 600;
+  vertical-align: baseline;
+}
+
+.list_wrap,
+.timeline_wrap,
+.board_wrap {
+  display: none;
+  padding-bottom: 40px;
+}
+
+.list_wrap.on,
+.timeline_wrap.on,
+.board_wrap.on {
+  display: block;
+}
+
+.importance dt {
+  display: none;
+}
+
+.importance dd {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  width: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.importance .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.resource {
+  margin-top: 4px;
+  display: flex;
+}
+
+.resource li {
+  padding: 2px 8px;
+  border-radius: 4px;
+  /* color: #fff; */
+  margin-right: 4px;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.platform {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.platform li {
+  position: relative;
+  border-radius: 6px;
+  padding: 2px 6px;
+  margin: 4px 2px 4px 0;
+  font-size: 12px;
+}
+
 /* 요청 상세 */
+.modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(9, 30, 66, 0.54);
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+}
+
+.modal.on {
+  display: block;
+}
+
 .request_details {
   position: fixed;
   top: 50%;
@@ -610,266 +912,4 @@ main {
 .writing_time {
   font-size: 11px;
   text-align: right;
-}
-
-/* 보드형 */
-.board_wrap {
-  padding-right: 40px;
-  box-sizing: border-box;
-}
-
-.board_wrap .flex_box {
-  justify-content: space-between;
-}
-
-.board_item {
-  width: calc(20% - 14px);
-  box-sizing: border-box;
-  height: max-content;
-}
-
-.board_title {
-  padding: 8px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.board_progress_wrap {
-  background: rgba(241, 248, 251, 0.7);
-}
-
-.board_progress {
-  background-color: rgb(211, 229, 239);
-  color: rgb(24, 51, 71);
-}
-
-.board_inprogress_wrap {
-  background: rgba(244, 248, 243, 0.7);
-}
-
-.board_inprogress {
-  background-color: rgb(219, 237, 219);
-  color: rgb(28, 56, 41);
-}
-
-.board_completion_wrap {
-  background: rgba(249, 246, 252, 0.7);
-}
-
-.board_completion {
-  background-color: rgb(232, 222, 238);
-  color: rgb(65, 36, 84);
-}
-
-.board_hold_wrap {
-  background: rgba(252, 245, 242, 0.7);
-}
-
-.board_hold {
-  background-color: rgb(250, 222, 201);
-  color: rgb(73, 41, 14);
-}
-
-.board_reject_wrap {
-  background: rgba(253, 245, 243, 0.7);
-}
-
-.board_reject {
-  background-color: rgb(255, 226, 221);
-  color: rgb(93, 23, 21);
-}
-
-.notepad_wrap {
-  padding: 12px 8px;
-}
-
-.notepad {
-  position: relative;
-  padding: 8px;
-  background-color: #fff;
-  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.05) 0px 2px 4px;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-
-.notepad:last-child {
-  margin-bottom: 0;
-}
-
-.notepad .flex_box {
-  justify-content: space-around;
-}
-
-.note_title {
-  font-size: 16px;
-  width: calc(100% - 16px);
-  margin-bottom: 6px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  word-break: break-word;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical
-}
-
-.done_date {
-  margin-bottom: 4px;
-}
-
-.notepad .writer,
-.notepad .importance {
-  display: flex;
-}
-
-.notepad .writer dd {
-  margin-left: 8px;
-}
-
-.done_date span {
-  color: red;
-  font-weight: 600;
-  vertical-align: baseline;
-}
-
-.resource {
-  margin-top: 4px;
-  display: flex;
-}
-
-.resource li {
-  padding: 2px 8px;
-  border-radius: 4px;
-  color: #fff;
-  margin-right: 4px;
-  font-weight: 300;
-}
-
-
-.list_wrap,
-.timeline_wrap,
-.board_wrap {
-  display: none;
-  padding-bottom: 40px;
-}
-
-.list_wrap.on,
-.timeline_wrap.on,
-.board_wrap.on {
-  display: block;
-}
-
-.importance dt {
-  display: none;
-}
-
-.importance dd {
-  position: absolute;
-  top: 4px;
-  right: 2px;
-  width: 22px;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.importance .material-symbols-outlined {
-  font-size: 22px;
-  margin: 0;
-  color: #0C66E4;
-}
-
-.platform {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.platform li {
-  position: relative;
-  border-radius: 10px;
-  padding: 2px 10px 2px 16px;
-  margin: 4px 2px 4px 0;
-}
-
-.platform li::before {
-  content: '';
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  position: absolute;
-  left: 7px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* colors */
-.pla {
-  background-color: rgb(72, 109, 172);
-}
-
-.des {
-  background-color: rgb(93, 149, 93);
-}
-
-.pub {
-  background-color: rgb(195, 141, 40);
-}
-
-.dev {
-  background-color: rgb(180, 114, 114);
-}
-
-.mall {
-  background-color: rgb(255, 226, 221);
-  color: rgb(93, 23, 21);
-}
-
-li.mall::before {
-  background-color: rgb(225, 111, 100);
-}
-
-.homepage {
-  background-color: rgba(227, 226, 224, 0.5);
-  color: rgb(50, 48, 44);
-}
-
-li.homepage::before {
-  background-color: rgb(108, 155, 125);
-}
-
-.mypage {
-  background-color: rgb(211, 211, 239);
-  color: rgb(32, 24, 71);
-}
-
-li.mypage::before {
-  background-color: rgb(120, 91, 189);
-}
-
-.customerService {
-  background-color: rgb(227, 226, 224);
-  color: rgb(50, 48, 44);
-}
-
-li.customerService::before {
-  background-color: rgb(145, 145, 142);
-}
-
-.admin {
-  background-color: rgb(211, 229, 239);
-  color: rgb(24, 51, 71);
-}
-
-li.admin::before {
-  background-color: rgb(91, 151, 189);
-}
-
-.monteSystem {
-  background-color: rgb(253, 236, 200);
-  color: rgb(64, 44, 27);
-}
-
-li.monteSystem::before {
-  background-color: rgb(203, 148, 51);
 }

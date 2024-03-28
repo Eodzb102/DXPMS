@@ -53,8 +53,8 @@
           <section class="option_area">
             <ul class="option_view">
               <li data-viewtype="list_wrap"><button>List</button></li>
-              <li data-viewtype="timeline_wrap"><button>Timeline</button></li>
-              <li class="active" data-viewtype="board_wrap"><button>Board</button></li>
+              <li class="active" data-viewtype="timeline_wrap"><button>Timeline</button></li>
+              <li data-viewtype="board_wrap"><button>Board</button></li>
             </ul>
             <div class="option_wrap">
               <div class="option_filter">
@@ -198,21 +198,21 @@
                       <th><p>제목</p></th>
                       <th><p>작성자</p></th>
                       <th><p>작업파트</p></th>
-                      <th>
+                      <th class="center">
                         <p>
                           시작일
                           <button><span class="material-symbols-outlined"> arrow_drop_down </span></button>
                           <button><span class="material-symbols-outlined"> arrow_drop_up </span></button>
                         </p>
                       </th>
-                      <th>
+                      <th class="center">
                         <p>
                           종료일
                           <button class="active"><span class="material-symbols-outlined"> arrow_drop_down </span></button>
                           <button><span class="material-symbols-outlined"> arrow_drop_up </span></button>
                         </p>
                       </th>
-                      <th>
+                      <th class="center">
                         <p>
                           중요도
                           <button><span class="material-symbols-outlined"> arrow_drop_down </span></button>
@@ -221,7 +221,7 @@
                       </th>
                       <th><p>진행상태</p></th>
                       <th><p>작성일시</p></th>
-                      <th>
+                      <th class="center">
                         <p>
                           완료희망일
                           <button><span class="material-symbols-outlined"> arrow_drop_down </span></button>
@@ -240,11 +240,14 @@
                       </td>
                       <td>
                         <div>
-                          <p>홈페이지</p>
-                          <p>관리자</p>
-                          <p>쇼핑몰</p>
-                          <p>마이페이지/고객센터</p>
-                          <p>내부시스템</p>
+                          <ul class="platform">
+                            <li class="homepage">홈페이지</li>
+                            <li class="mall">쇼핑몰</li>
+                            <li class="admin">관리자</li>
+                            <li class="customerService">고객센터</li>
+                            <li class="mypage">마이페이지</li>
+                            <li class="monteSystem">내부시스템</li>
+                          </ul>
                         </div>
                       </td>
                       <td>
@@ -264,13 +267,15 @@
                       </td>
                       <td>
                         <div>
-                          <p>pla</p>
-                          <p>des</p>
-                          <p>pub</p>
-                          <p>dev</p>
+                          <ul class="resource">
+                            <li class="pla">pla</li>
+                            <li class="des">des</li>
+                            <li class="pub">pub</li>
+                            <li class="dev">dev</li>
+                          </ul>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년2월28일</p>
                         </div>
@@ -280,14 +285,14 @@
                           <p>2024년2월29일</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
-                          <p>상</p>
+                          <p><span class="material-symbols-outlined high"> stat_2 </span>상</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center list_progresse inprogress">
                         <div>
-                          <p>진행중</p>
+                          <span>진행중</span>
                         </div>
                       </td>
                       <td>
@@ -295,12 +300,12 @@
                           <p>2024년2월23일 오후 2:00</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년3월8일</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>홍길동</p>
                         </div>
@@ -314,11 +319,11 @@
                       </td>
                       <td>
                         <div>
-                          <p>홈페이지</p>
-                          <p>관리자</p>
-                          <p>쇼핑몰</p>
-                          <p>마이페이지/고객센터</p>
-                          <p>내부시스템</p>
+                          <ul class="platform">
+                            <li class="homepage">홈페이지</li>
+                            <li class="customerService">고객센터</li>
+                            <li class="mypage">마이페이지</li>
+                          </ul>
                         </div>
                       </td>
                       <td>
@@ -338,13 +343,15 @@
                       </td>
                       <td>
                         <div>
-                          <p>pla</p>
-                          <p>des</p>
-                          <p>pub</p>
-                          <p>dev</p>
+                          <ul class="resource">
+                            <li class="pla">pla</li>
+                            <li class="des">des</li>
+                            <li class="pub">pub</li>
+                            <li class="dev">dev</li>
+                          </ul>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년2월28일</p>
                         </div>
@@ -354,14 +361,14 @@
                           <p></p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
-                          <p>상</p>
+                          <p><span class="material-symbols-outlined high"> stat_2 </span>상</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center list_progresse inprogress">
                         <div>
-                          <p>진행중</p>
+                          <span>진행중</span>
                         </div>
                       </td>
                       <td>
@@ -369,12 +376,12 @@
                           <p>2024년2월23일 오후 2:00</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년3월8일</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>홍길동</p>
                         </div>
@@ -388,8 +395,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>홈페이지</p>
-                          <p>관리자</p>
+                          <ul class="platform">
+                            <li class="customerService">고객센터</li>
+                            <li class="mypage">마이페이지</li>
+                          </ul>
                         </div>
                       </td>
                       <td>
@@ -409,13 +418,15 @@
                       </td>
                       <td>
                         <div>
-                          <p>pla</p>
-                          <p>des</p>
-                          <p>pub</p>
-                          <p>dev</p>
+                          <ul class="resource">
+                            <li class="pla">pla</li>
+                            <li class="des">des</li>
+                            <li class="pub">pub</li>
+                            <li class="dev">dev</li>
+                          </ul>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년2월28일</p>
                         </div>
@@ -425,14 +436,14 @@
                           <p></p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
-                          <p>상</p>
+                          <p><span class="material-symbols-outlined high"> stat_2 </span>상</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center list_progresse progress">
                         <div>
-                          <p>진행중</p>
+                          <span>업무요청</span>
                         </div>
                       </td>
                       <td>
@@ -440,12 +451,12 @@
                           <p>2024년2월23일 오후 2:00</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년3월8일</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>홍길동</p>
                         </div>
@@ -459,10 +470,9 @@
                       </td>
                       <td>
                         <div>
-                          <p>홈페이지</p>
-                          <p>관리자</p>
-                          <p>쇼핑몰</p>
-                          <p>내부시스템</p>
+                          <ul class="platform">
+                            <li class="homepage">홈페이지</li>
+                          </ul>
                         </div>
                       </td>
                       <td>
@@ -482,11 +492,13 @@
                       </td>
                       <td>
                         <div>
-                          <p>pla</p>
-                          <p>des</p>
+                          <ul class="resource">
+                            <li class="pla">pla</li>
+                            <li class="des">des</li>
+                          </ul>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년2월28일</p>
                         </div>
@@ -496,14 +508,14 @@
                           <p></p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
-                          <p>상</p>
+                          <p><span class="material-symbols-outlined high"> stat_2 </span>상</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center inprogress list_progresse">
                         <div>
-                          <p>진행중</p>
+                          <span>진행중</span>
                         </div>
                       </td>
                       <td>
@@ -511,12 +523,12 @@
                           <p>2024년2월23일 오후 2:00</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년3월8일</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>홍길동</p>
                         </div>
@@ -530,9 +542,12 @@
                       </td>
                       <td>
                         <div>
-                          <p>쇼핑몰</p>
-                          <p>마이페이지/고객센터</p>
-                          <p>내부시스템</p>
+                          <ul class="platform">
+                            <li class="homepage">홈페이지</li>
+                            <li class="mall">쇼핑몰</li>
+                            <li class="admin">관리자</li>
+                            <li class="monteSystem">내부시스템</li>
+                          </ul>
                         </div>
                       </td>
                       <td>
@@ -552,13 +567,15 @@
                       </td>
                       <td>
                         <div>
-                          <p>pla</p>
-                          <p>des</p>
-                          <p>pub</p>
-                          <p>dev</p>
+                          <ul class="resource">
+                            <li class="pla">pla</li>
+                            <li class="des">des</li>
+                            <li class="pub">pub</li>
+                            <li class="dev">dev</li>
+                          </ul>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년2월28일</p>
                         </div>
@@ -568,14 +585,14 @@
                           <p></p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
-                          <p>상</p>
+                          <p><span class="material-symbols-outlined high"> stat_2 </span>상</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center list_progresse completion">
                         <div>
-                          <p>진행중</p>
+                          <span>최종완료</span>
                         </div>
                       </td>
                       <td>
@@ -583,12 +600,12 @@
                           <p>2024년2월23일 오후 2:00</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년3월8일</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>홍길동</p>
                         </div>
@@ -602,9 +619,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>홈페이지</p>
-                          <p>관리자</p>
-                          <p>내부시스템</p>
+                          <ul class="platform">
+                            <li class="homepage">홈페이지</li>
+                            <li class="monteSystem">내부시스템</li>
+                          </ul>
                         </div>
                       </td>
                       <td>
@@ -624,13 +642,15 @@
                       </td>
                       <td>
                         <div>
-                          <p>pla</p>
-                          <p>des</p>
-                          <p>pub</p>
-                          <p>dev</p>
+                          <ul class="resource">
+                            <li class="pla">pla</li>
+                            <li class="des">des</li>
+                            <li class="pub">pub</li>
+                            <li class="dev">dev</li>
+                          </ul>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년2월28일</p>
                         </div>
@@ -640,14 +660,14 @@
                           <p></p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
-                          <p>상</p>
+                          <p><span class="material-symbols-outlined high"> stat_2 </span>상</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="list_progresse center hold">
                         <div>
-                          <p>진행중</p>
+                          <span>일시정지</span>
                         </div>
                       </td>
                       <td>
@@ -655,12 +675,12 @@
                           <p>2024년2월23일 오후 2:00</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년3월8일</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>홍길동</p>
                         </div>
@@ -674,7 +694,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>마이페이지/고객센터</p>
+                          <ul class="platform">
+                            <li class="mall">쇼핑몰</li>
+                            <li class="customerService">고객센터</li>
+                          </ul>
                         </div>
                       </td>
                       <td>
@@ -694,13 +717,15 @@
                       </td>
                       <td>
                         <div>
-                          <p>pla</p>
-                          <p>des</p>
-                          <p>pub</p>
-                          <p>dev</p>
+                          <ul class="resource">
+                            <li class="pla">pla</li>
+                            <li class="des">des</li>
+                            <li class="pub">pub</li>
+                            <li class="dev">dev</li>
+                          </ul>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년2월28일</p>
                         </div>
@@ -710,14 +735,14 @@
                           <p></p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
-                          <p>상</p>
+                          <p><span class="material-symbols-outlined high"> stat_2 </span>상</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="list_progresse center reject">
                         <div>
-                          <p>진행중</p>
+                          <span>반려</span>
                         </div>
                       </td>
                       <td>
@@ -725,12 +750,12 @@
                           <p>2024년2월23일 오후 2:00</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년3월8일</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>홍길동</p>
                         </div>
@@ -744,8 +769,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>마이페이지/고객센터</p>
-                          <p>내부시스템</p>
+                          <ul class="platform">
+                            <li class="mall">쇼핑몰</li>
+                            <li class="mypage">마이페이지</li>
+                          </ul>
                         </div>
                       </td>
                       <td>
@@ -765,13 +792,15 @@
                       </td>
                       <td>
                         <div>
-                          <p>pla</p>
-                          <p>des</p>
-                          <p>pub</p>
-                          <p>dev</p>
+                          <ul class="resource">
+                            <li class="pla">pla</li>
+                            <li class="des">des</li>
+                            <li class="pub">pub</li>
+                            <li class="dev">dev</li>
+                          </ul>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년2월28일</p>
                         </div>
@@ -781,14 +810,14 @@
                           <p></p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
-                          <p>상</p>
+                          <p><span class="material-symbols-outlined high"> stat_2 </span>상</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center list_progresse inprogress">
                         <div>
-                          <p>진행중</p>
+                          <span>진행중</span>
                         </div>
                       </td>
                       <td>
@@ -796,12 +825,12 @@
                           <p>2024년2월23일 오후 2:00</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년3월8일</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>홍길동</p>
                         </div>
@@ -815,11 +844,9 @@
                       </td>
                       <td>
                         <div>
-                          <p>홈페이지</p>
-                          <p>관리자</p>
-                          <p>쇼핑몰</p>
-                          <p>마이페이지/고객센터</p>
-                          <p>내부시스템</p>
+                          <ul class="platform">
+                            <li class="monteSystem">내부시스템</li>
+                          </ul>
                         </div>
                       </td>
                       <td>
@@ -839,13 +866,15 @@
                       </td>
                       <td>
                         <div>
-                          <p>pla</p>
-                          <p>des</p>
-                          <p>pub</p>
-                          <p>dev</p>
+                          <ul class="resource">
+                            <li class="pla">pla</li>
+                            <li class="des">des</li>
+                            <li class="pub">pub</li>
+                            <li class="dev">dev</li>
+                          </ul>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년2월28일</p>
                         </div>
@@ -855,14 +884,14 @@
                           <p></p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
-                          <p>상</p>
+                          <p><span class="material-symbols-outlined high"> stat_2 </span>상</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center list_progresse inprogress">
                         <div>
-                          <p>진행중</p>
+                          <span>진행중</span>
                         </div>
                       </td>
                       <td>
@@ -870,12 +899,12 @@
                           <p>2024년2월23일 오후 2:00</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년3월8일</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>홍길동</p>
                         </div>
@@ -889,9 +918,10 @@
                       </td>
                       <td>
                         <div>
-                          <p>홈페이지</p>
-                          <p>마이페이지/고객센터</p>
-                          <p>내부시스템</p>
+                          <ul class="platform">
+                            <li class="admin">관리자</li>
+                            <li class="monteSystem">내부시스템</li>
+                          </ul>
                         </div>
                       </td>
                       <td>
@@ -911,13 +941,15 @@
                       </td>
                       <td>
                         <div>
-                          <p>pla</p>
-                          <p>des</p>
-                          <p>pub</p>
-                          <p>dev</p>
+                          <ul class="resource">
+                            <li class="pla">pla</li>
+                            <li class="des">des</li>
+                            <li class="pub">pub</li>
+                            <li class="dev">dev</li>
+                          </ul>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년2월28일</p>
                         </div>
@@ -927,14 +959,14 @@
                           <p></p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
-                          <p>상</p>
+                          <p><span class="material-symbols-outlined high"> stat_2 </span>상</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center list_progresse inprogress">
                         <div>
-                          <p>진행중</p>
+                          <span>진행중</span>
                         </div>
                       </td>
                       <td>
@@ -942,12 +974,12 @@
                           <p>2024년2월23일 오후 2:00</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>2024년3월8일</p>
                         </div>
                       </td>
-                      <td>
+                      <td class="center">
                         <div>
                           <p>홍길동</p>
                         </div>
@@ -967,7 +999,434 @@
                 <a href="#" class="last">맨뒤</a>
               </div>
             </div>
-            <div class="timeline_wrap"></div>
+            <div class="timeline_wrap">
+              <div class="flex_box">
+                <div class="work_title">
+                  <table class="table_view">
+                    <thead class="table_head">
+                      <tr>
+                        <th><p>No</p></th>
+                        <th><p>플랫폼</p></th>
+                        <th><p>제목</p></th>
+                        <th><p>작성자</p></th>
+                      </tr>
+                    </thead>
+                    <tbody class="table_body">
+                      <tr>
+                        <td>
+                          <div>
+                            <p>35</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <ul class="platform">
+                              <li class="homepage">홈페이지</li>
+                              <li class="mall">쇼핑몰</li>
+                              <li class="admin">관리자</li>
+                              <li class="customerService">고객센터</li>
+                              <li class="mypage">마이페이지</li>
+                              <li class="monteSystem">내부시스템</li>
+                            </ul>
+                          </div>
+                        </td>
+                        <td class="open">
+                          <div>
+                            <button>신규개발 요청드립닏다.</button>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <p>홍길동</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div>
+                            <p>35</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <ul class="platform">
+                              <li class="homepage">홈페이지</li>
+                              <li class="mall">쇼핑몰</li>
+                              <li class="admin">관리자</li>
+                              <li class="customerService">고객센터</li>
+                              <li class="mypage">마이페이지</li>
+                              <li class="monteSystem">내부시스템</li>
+                            </ul>
+                          </div>
+                        </td>
+                        <td class="open">
+                          <div>
+                            <button>신규개발 요청드립닏다. 이거 해주세요. 이렇게 저렇게 왔다갔다리 만들어주세요. 해결 해주세욤.</button>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <p>홍길동</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div>
+                            <p>35</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <ul class="platform">
+                              <li class="homepage">홈페이지</li>
+                              <li class="mall">쇼핑몰</li>
+                              <li class="admin">관리자</li>
+                              <li class="customerService">고객센터</li>
+                              <li class="mypage">마이페이지</li>
+                              <li class="monteSystem">내부시스템</li>
+                            </ul>
+                          </div>
+                        </td>
+                        <td class="open">
+                          <div>
+                            <button>신규개발 요청드립닏다.</button>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <p>홍길동</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div>
+                            <p>35</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <ul class="platform">
+                              <li class="homepage">홈페이지</li>
+                              <li class="mall">쇼핑몰</li>
+                              <li class="admin">관리자</li>
+                              <li class="customerService">고객센터</li>
+                              <li class="mypage">마이페이지</li>
+                              <li class="monteSystem">내부시스템</li>
+                            </ul>
+                          </div>
+                        </td>
+                        <td class="open">
+                          <div>
+                            <button>신규개발 요청드립닏다.</button>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <p>홍길동</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div>
+                            <p>35</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <ul class="platform">
+                              <li class="homepage">홈페이지</li>
+                              <li class="mall">쇼핑몰</li>
+                              <li class="admin">관리자</li>
+                              <li class="customerService">고객센터</li>
+                              <li class="mypage">마이페이지</li>
+                              <li class="monteSystem">내부시스템</li>
+                            </ul>
+                          </div>
+                        </td>
+                        <td class="open">
+                          <div>
+                            <button>신규개발 요청드립닏다.</button>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <p>홍길동</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div>
+                            <p>35</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <ul class="platform">
+                              <li class="homepage">홈페이지</li>
+                              <li class="mall">쇼핑몰</li>
+                              <li class="admin">관리자</li>
+                              <li class="customerService">고객센터</li>
+                              <li class="mypage">마이페이지</li>
+                              <li class="monteSystem">내부시스템</li>
+                            </ul>
+                          </div>
+                        </td>
+                        <td class="open">
+                          <div>
+                            <button>신규개발 요청드립닏다.</button>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <p>홍길동</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div>
+                            <p>35</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <ul class="platform">
+                              <li class="homepage">홈페이지</li>
+                              <li class="mall">쇼핑몰</li>
+                              <li class="admin">관리자</li>
+                              <li class="customerService">고객센터</li>
+                              <li class="mypage">마이페이지</li>
+                              <li class="monteSystem">내부시스템</li>
+                            </ul>
+                          </div>
+                        </td>
+                        <td class="open">
+                          <div>
+                            <button>신규개발 요청드립닏다.</button>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <p>홍길동</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div>
+                            <p>35</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <ul class="platform">
+                              <li class="homepage">홈페이지</li>
+                              <li class="mall">쇼핑몰</li>
+                              <li class="admin">관리자</li>
+                              <li class="customerService">고객센터</li>
+                              <li class="mypage">마이페이지</li>
+                              <li class="monteSystem">내부시스템</li>
+                            </ul>
+                          </div>
+                        </td>
+                        <td class="open">
+                          <div>
+                            <button>신규개발 요청드립닏다.</button>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <p>홍길동</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div>
+                            <p>35</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <ul class="platform">
+                              <li class="homepage">홈페이지</li>
+                              <li class="mall">쇼핑몰</li>
+                              <li class="admin">관리자</li>
+                              <li class="customerService">고객센터</li>
+                              <li class="mypage">마이페이지</li>
+                              <li class="monteSystem">내부시스템</li>
+                            </ul>
+                          </div>
+                        </td>
+                        <td class="open">
+                          <div>
+                            <button>신규개발 요청드립닏다.</button>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <p>홍길동</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div>
+                            <p>35</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <ul class="platform">
+                              <li class="homepage">홈페이지</li>
+                              <li class="mall">쇼핑몰</li>
+                              <li class="admin">관리자</li>
+                              <li class="customerService">고객센터</li>
+                              <li class="mypage">마이페이지</li>
+                              <li class="monteSystem">내부시스템</li>
+                            </ul>
+                          </div>
+                        </td>
+                        <td class="open">
+                          <div>
+                            <button>신규개발 요청드립닏다.</button>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <p>홍길동</p>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="time_area">
+                  <div class="time_area_head">
+                    <ol>
+                      <li>
+                        <p>24년 1월</p>
+                        <ol>
+                          <li class="offday">1</li>
+                          <li>2</li>
+                          <li>3</li>
+                          <li>4</li>
+                          <li>5</li>
+                          <li class="offday">6</li>
+                          <li class="offday">7</li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p>24년 1월</p>
+                        <ol>
+                          <li>8</li>
+                          <li>9</li>
+                          <li>10</li>
+                          <li>11</li>
+                          <li>12</li>
+                          <li class="offday">13</li>
+                          <li class="offday">14</li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p>24년 1월</p>
+                        <ol>
+                          <li>15</li>
+                          <li>16</li>
+                          <li>17</li>
+                          <li>18</li>
+                          <li>19</li>
+                          <li class="offday">20</li>
+                          <li class="offday">21</li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p>24년 1월</p>
+                        <ol>
+                          <li>22</li>
+                          <li>23</li>
+                          <li>24</li>
+                          <li>25</li>
+                          <li>26</li>
+                          <li class="offday">27</li>
+                          <li class="offday">28</li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p>24년 2월</p>
+                        <ol>
+                          <li>29</li>
+                          <li>30</li>
+                          <li>31</li>
+                          <li>01</li>
+                          <li>02</li>
+                          <li class="offday">03</li>
+                          <li class="offday">04</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="time_area_body">
+                    <ul>
+                      <li>
+                        <div class="list_progresse inprogress">
+                          <span class="open">진행중</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="list_progresse progress">
+                          <span class="open">업무요청</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="list_progresse completion">
+                          <span class="open">최종완료</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="list_progresse hold">
+                          <span class="open">일시중지</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="list_progresse reject">
+                          <span class="open">반려</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="list_progresse inprogress">
+                          <span class="open">진행중</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="list_progresse inprogress">
+                          <span class="open">진행중</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="list_progresse inprogress">
+                          <span class="open">진행중</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="list_progresse inprogress">
+                          <span class="open">진행중</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="list_progresse inprogress">
+                          <span class="open">진행중</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="board_wrap">
               <div class="flex_box">
                 <div class="board_progress_wrap board_item">
@@ -983,7 +1442,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_1 </span>하</dd>
+                          <dd><span class="material-symbols-outlined low"> drag_handle </span>하</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1009,7 +1468,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_2 </span>중</dd>
+                          <dd><span class="material-symbols-outlined middle"> stat_1 </span>중</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1032,7 +1491,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1059,7 +1518,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1087,7 +1546,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1110,7 +1569,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1133,7 +1592,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1156,7 +1615,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1179,7 +1638,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1202,7 +1661,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1225,7 +1684,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1248,7 +1707,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1271,7 +1730,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1294,7 +1753,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1322,7 +1781,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1350,7 +1809,7 @@
                         </dl>
                         <dl class="importance">
                           <dt>중요도</dt>
-                          <dd><span class="material-symbols-outlined"> stat_3 </span>상</dd>
+                          <dd><span class="material-symbols-outlined high"> stat_2 </span>상</dd>
                         </dl>
                       </div>
                       <ul class="platform">
@@ -1503,7 +1962,7 @@
                       <fieldset style="margin-left: 80px">
                         <legend>최종완료</legend>
                         <div>
-                          <button class="completion">업무종료</button>
+                          <button class="work_completion">업무종료</button>
                           <!-- <span class="required">최종 확인자 : 김아무개</span> -->
                         </div>
                       </fieldset>
