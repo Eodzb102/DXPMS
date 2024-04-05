@@ -1,5 +1,6 @@
 body,
-textarea {
+textarea,
+input {
   font-family: 'Pretendard', '-apple-system', 'BlinkMacSystemFont', system-ui, 'Roboto', 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   font-size: 16px;
   color: #000000c7;
@@ -76,6 +77,19 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+button.more {
+  display: block;
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  background-color: rgb(57, 81, 89);
+  color: #fff;
+  padding: 4px 12px;
+  font-size: 14px;
+  white-space: normal;
+  margin: 40px auto 0;
+}
+
 /* colors */
 .pla {
   border: 1px solid rgb(9, 48, 117);
@@ -125,6 +139,17 @@ body {
 .monteSystem {
   background-color: rgb(253, 236, 200);
   color: rgb(64, 44, 27);
+}
+
+.offday {
+  color: rgba(17, 17, 17, 0.5)
+}
+
+.option_today,
+.today {
+  color: rgb(0 69 141);
+  background-color: rgba(92, 172, 255, 0.29);
+  border: 1px solid rgba(0, 0, 0, 0.1)
 }
 
 /* 진행상태 */
@@ -345,15 +370,29 @@ header {
 .heaer_user_info ul {
   display: none;
   width: 100%;
-  padding: 14px 0;
   position: absolute;
   top: 25px;
   background-color: #fff;
   border: 1px solid #091e4224;
+  border-bottom: none;
 }
 
-.heaer_user_info ul li:first-child {
-  margin-bottom: 12px;
+.heaer_user_info ul li a {
+  display: block;
+  text-indent: 12px;
+  line-height: 42px;
+}
+
+.heaer_user_info ul li {
+  border-bottom: 1px solid #091e4224;
+}
+
+.heaer_user_info.active ul {
+  display: block;
+}
+
+.heaer_user_info.active img {
+  transform: none;
 }
 
 .heaer_user_info.open img {
@@ -439,7 +478,7 @@ main {
   align-items: center;
   margin-right: 8px;
   border-radius: 14px;
-  padding: 0 12px;
+  padding: 0 8px 0 12px;
   height: 26px;
   line-height: 26px;
   border: 1px solid rgba(55, 53, 47, 0.16);
@@ -451,7 +490,7 @@ main {
 }
 
 .option_filter button span {
-  margin-right: -4px;
+  /* margin-right: -4px; */
 }
 
 .option_filter_item button:hover {
@@ -499,12 +538,41 @@ main {
 .option_filter_item li label {
   padding: 4px 10px;
   display: block;
+  cursor: pointer;
 }
 
 .option_filter_item li input {
   margin-right: 6px;
   height: 15px;
   vertical-align: middle;
+}
+
+.option_text_search {
+  position: relative;
+}
+
+.option_text_search input {
+  height: 24px;
+  text-indent: 8px;
+  border: 1px solid rgba(55, 53, 47, 0.16);
+  font-size: 14px;
+}
+
+.option_text_search input:focus {
+  outline: 2px solid rgba(12, 102, 228, 0.5);
+}
+
+.option_text_search button {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  font-size: 0px;
+}
+
+.option_text_search span {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .option_control {
@@ -551,15 +619,9 @@ th .active .material-symbols-outlined {
 }
 
 th > p {
-  margin: 4px 12px;
+  padding: 13px 12px;
   white-space: nowrap;
 }
-
-th.center > p {
-  margin: 4px;
-}
-
-
 
 .table_body div {
   padding: 4px 12px;
@@ -690,7 +752,7 @@ td p:has(.material-symbols-outlined) {
 .timeline_wrap,
 .board_wrap {
   display: none;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
 }
 
 .list_wrap.on,
@@ -913,3 +975,84 @@ td p:has(.material-symbols-outlined) {
   font-size: 11px;
   text-align: right;
 }
+
+/* time line */
+.timeline_wrap .flex_box {
+  position: relative;
+  padding-left: 40px;
+}
+
+.time_area_wrap {
+  width: max-content;
+}
+
+.time_area_head {
+  width: max-content;
+}
+
+.time_area_head ol {
+  display: flex;
+}
+
+.time_week {
+  border-right: 1px solid rgba(15, 15, 15, 0.04);
+  border-left: 1px solid rgba(15, 15, 15, 0.04);
+  border-bottom: 1px solid rgba(15, 15, 15, 0.08);
+  box-sizing: border-box;
+  margin-left: -1px;
+}
+
+.time_area_head ol li:first-child {
+  border-left: none;
+}
+
+.time_week_title {
+  text-align: center;
+}
+
+.time_week_days li {
+  margin: 0 10px 2px;
+  font-size: 12px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.time_area_body {
+  /* display: none; */
+}
+
+.time_area_body li {
+  height: 35px;
+}
+
+.time_area_body li:nth-child(odd) {
+  background-color: rgba(92, 92, 92, 0.04);
+}
+
+.time_area_body li:nth-child(even) {
+  background-color: rgba(92, 92, 92, 0.08);
+}
+
+.x_scroll {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.time_area_body .list_progresse {
+  position: relative;
+  height: 100%;
+}
+
+.time_area_body .list_progresse span {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* .option_today {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: lightcoral;
+} */

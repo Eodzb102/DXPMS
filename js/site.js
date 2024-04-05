@@ -1,6 +1,10 @@
 $(function () {
   view();
 
+  $('.heaer_user_info button').on('click', function () {
+    $('.heaer_user_info').toggleClass('active');
+  });
+
   $('.option_view li').on('click', function () {
     $('.option_view li').removeClass('active');
     $(this).addClass('active');
@@ -18,7 +22,7 @@ $(function () {
   $('.option_filter_item').on('click', function (e) {
     e.stopPropagation();
     $(this).siblings().removeClass('active');
-    $(this).toggleClass('active');
+    $(this).addClass('active');
   });
 
   $('.table_head button').on('click', function () {
