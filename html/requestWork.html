@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" />
     <title>업무요청</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
     <script src="../js/jquery-3.6.1.min.js"></script>
@@ -167,29 +167,32 @@
                     </li>
                   </ul>
                 </div>
-                <div class="option_text_search">
-                  <label>
-                    <input type="text" placeholder="검색" />
-                    <button>검색<span class="material-symbols-outlined">search</span></button>
-                  </label>
-                </div>
                 <div class="option_control">
-                  <ul>
-                    <li class="option_today">
-                      <button>오늘</button>
-                    </li>
-                    <li class="option_cancel">
-                      <button>초기화</button>
-                    </li>
-                    <li class="new_request">
-                      <button>업무요청</button>
-                    </li>
-                  </ul>
+                  <div class="option_text_search">
+                    <label>
+                      <input type="text" placeholder="검색" />
+                      <button>검색<span class="material-symbols-outlined">search</span></button>
+                    </label>
+                  </div>
+                  <div class="option_buttons">
+                    <ul>
+                      <li class="option_today">
+                        <button>오늘</button>
+                      </li>
+                      <li class="option_cancel">
+                        <button>초기화</button>
+                      </li>
+                      <li class="new_request">
+                        <button>업무요청</button>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
           <section class="view_area">
+            <!-- list -->
             <div class="list_wrap">
               <div class="table_scroll">
                 <table class="table_view">
@@ -1377,6 +1380,7 @@
                 <a href="#" class="last">맨뒤</a>
               </div>
             </div>
+            <!-- timeline -->
             <div class="timeline_wrap">
               <div class="flex_box">
                 <div class="work_title">
@@ -1827,81 +1831,82 @@
                       </tr>
                     </tbody>
                   </table>
+                  <div class="width_bar"></div>
                 </div>
                 <div class="x_scroll">
                   <div class="time_area_wrap">
                     <div class="time_area_head">
                       <ol class="time_week_wrap">
                         <li class="time_week">
-                          <p class="time_week_title">24년 1월</p>
+                          <p class="time_week_title" data-year-month="24-01">24년 1월</p>
                           <ol class="time_week_days">
-                            <li class="offday">01</li>
-                            <li class="today">02</li>
-                            <li>03</li>
-                            <li>04</li>
-                            <li>05</li>
-                            <li class="offday">06</li>
-                            <li class="offday">07</li>
+                            <li data-day="01" class="offday">01</li>
+                            <li data-day="02" class="today">02</li>
+                            <li data-day="03">03</li>
+                            <li data-day="04">04</li>
+                            <li data-day="05">05</li>
+                            <li data-day="06" class="offday">06</li>
+                            <li data-day="07" class="offday">07</li>
                           </ol>
                         </li>
                         <li class="time_week">
-                          <p class="time_week_title">24년 1월</p>
+                          <p class="time_week_title" data-year-month="24-01">24년 1월</p>
                           <ol class="time_week_days">
-                            <li>08</li>
-                            <li>09</li>
-                            <li>10</li>
-                            <li>11</li>
-                            <li>12</li>
-                            <li class="offday">13</li>
-                            <li class="offday">14</li>
+                            <li data-day="08">08</li>
+                            <li data-day="09">09</li>
+                            <li data-day="10">10</li>
+                            <li data-day="11">11</li>
+                            <li data-day="12">12</li>
+                            <li data-day="13" class="offday">13</li>
+                            <li data-day="14" class="offday">14</li>
                           </ol>
                         </li>
                         <li class="time_week">
-                          <p class="time_week_title">24년 1월</p>
+                          <p class="time_week_title" data-year-month="24-01">24년 1월</p>
                           <ol class="time_week_days">
-                            <li>15</li>
-                            <li>16</li>
-                            <li>17</li>
-                            <li>18</li>
-                            <li>19</li>
-                            <li class="offday">20</li>
-                            <li class="offday">21</li>
+                            <li data-day="15">15</li>
+                            <li data-day="16">16</li>
+                            <li data-day="17">17</li>
+                            <li data-day="18">18</li>
+                            <li data-day="19">19</li>
+                            <li data-day="20" class="offday">20</li>
+                            <li data-day="21" class="offday">21</li>
                           </ol>
                         </li>
                         <li class="time_week">
-                          <p class="time_week_title">24년 1월</p>
+                          <p class="time_week_title" data-year-month="24-01">24년 1월</p>
                           <ol class="time_week_days">
-                            <li>22</li>
-                            <li>23</li>
-                            <li>24</li>
-                            <li>25</li>
-                            <li>26</li>
-                            <li class="offday">27</li>
-                            <li class="offday">28</li>
+                            <li data-day="22">22</li>
+                            <li data-day="23">23</li>
+                            <li data-day="24">24</li>
+                            <li data-day="25">25</li>
+                            <li data-day="26">26</li>
+                            <li data-day="27" class="offday">27</li>
+                            <li data-day="28" class="offday">28</li>
                           </ol>
                         </li>
                         <li class="time_week">
-                          <p class="time_week_title">24년 2월</p>
+                          <p class="time_week_title" data-year-month="24-02">24년 2월</p>
                           <ol class="time_week_days">
-                            <li>29</li>
-                            <li>30</li>
-                            <li>31</li>
-                            <li>01</li>
-                            <li>02</li>
-                            <li class="offday">03</li>
-                            <li class="offday">04</li>
+                            <li data-day="29">29</li>
+                            <li data-day="30">30</li>
+                            <li data-day="31">31</li>
+                            <li data-day="01">01</li>
+                            <li data-day="02">02</li>
+                            <li data-day="03" class="offday">03</li>
+                            <li data-day="04" class="offday">04</li>
                           </ol>
                         </li>
                         <li class="time_week">
-                          <p class="time_week_title">24년 2월</p>
+                          <p class="time_week_title" data-year-month="24-02">24년 2월</p>
                           <ol class="time_week_days">
-                            <li>05</li>
-                            <li>06</li>
-                            <li>07</li>
-                            <li>08</li>
-                            <li>09</li>
-                            <li class="offday">10</li>
-                            <li class="offday">11</li>
+                            <li data-day="20">05</li>
+                            <li data-day="20">06</li>
+                            <li data-day="20">07</li>
+                            <li data-day="20">08</li>
+                            <li data-day="20">09</li>
+                            <li data-day="01" class="offday">10</li>
+                            <li data-day="01" class="offday">11</li>
                           </ol>
                         </li>
                       </ol>
@@ -1910,7 +1915,7 @@
                       <ul>
                         <li>
                           <div class="list_progresse inprogress">
-                            <span class="open">진행중</span>
+                            <span class="open time_date" data-start-date="2024-01-02" data-end-date="2024-02-09">진행중</span>
                           </div>
                         </li>
                         <li>
@@ -1990,6 +1995,7 @@
               </div>
               <button class="more">더보기 (15 / 100)</button>
             </div>
+            <!-- board -->
             <div class="board_wrap">
               <div class="flex_box">
                 <div class="board_progress_wrap board_item">
@@ -2502,8 +2508,8 @@
                     <fieldset>
                       <legend>작업 일정<span class="description">작업일정은 업무 협의 후 확정됩니다.</span></legend>
                       <div>
-                        <label>시작일 <input type="date" /></label>
-                        <label>종료일 <input type="date" /></label>
+                        <label class="start_date">시작일 <input type="date" /></label>
+                        <label class="end_date">종료일 <input type="date" /></label>
                       </div>
                     </fieldset>
                     <fieldset>

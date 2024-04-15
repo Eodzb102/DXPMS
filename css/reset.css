@@ -87,7 +87,7 @@ fieldset {
 input {
   margin: 0;
   padding: 0;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 
 figure {
