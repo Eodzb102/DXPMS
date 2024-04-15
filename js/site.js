@@ -80,12 +80,13 @@ $(function () {
 
   function drag() {
     let maxX = $('.work_title').outerWidth();
-    let minX = 80 + $('.width_bar').outerWidth();
+    let barWidth = $('.width_bar').outerWidth();
+    let minX = 80 + barWidth;
     let startX = 0;
     let delX = 0;
     let offsetX = 0;
 
-    $('.width_bar').css({ left: maxX - 2 + 'px' });
+    $('.width_bar').css({ left: maxX - barWidth / 2 + 'px' });
 
     $('.width_bar').on('mousedown', function (e) {
       e.preventDefault();
@@ -94,16 +95,15 @@ $(function () {
 
       $(document).on('mousemove', function (e) {
         delX = e.clientX - startX;
-        console.log($('.width_bar').position().left + $('.width_bar').outerWidth(), minX, delX);
         if ($('.work_title').outerWidth() >= minX || delX > 0) {
           $('.width_bar').css({ left: offsetX + delX + 'px' });
-          $('.work_title').css({ width: offsetX + delX + 1 + 'px' });
+          $('.work_title').css({ width: offsetX + delX + barWidth / 3 + 'px' });
         }
       });
       $(document).on('mouseup', function () {
         if ($('.width_bar').position().left > maxX) {
           $('.work_title').css({ width: maxX });
-          $('.width_bar').css({ left: maxX - 2 + 'px' });
+          $('.width_bar').css({ left: maxX - 4 + 'px' });
         }
         $(document).off('mousemove mouseup');
       });

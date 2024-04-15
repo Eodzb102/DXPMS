@@ -1082,17 +1082,29 @@ td p:has(.material-symbols-outlined) {
 
 .width_bar {
   position: absolute;
-  width: 3px;
-  background-color: rgba(15, 15, 15, 0.08);
+  width: 8px;
   cursor: e-resize;
   left: 100%;
   top: 0;
   height: 100%;
   box-shadow: transparent;
+
+}
+
+.width_bar::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(15, 15, 15, 0.08);
   transition: backgrond-color, box-shadow 0.2s;
 }
 
-.width_bar:hover {
+.width_bar:hover::before {
   background-color: #00c4ff;
   box-shadow: -2px 0px 3px 0px #00c4ff7a;
 }
@@ -1103,23 +1115,6 @@ td p:has(.material-symbols-outlined) {
   overflow-y: hidden;
 }
 
-/* 
-.x_scroll::before {
-  content: '';
-  display: block;
-  width: 1px;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  
-  z-index: 1;
-  
-}
-
-.x_scroll::before:hover {
-
-} */
 
 .time_area_body .list_progresse {
   position: relative;
