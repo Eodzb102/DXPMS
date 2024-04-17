@@ -545,7 +545,7 @@ main {
   max-width: calc(100vw - 24px);
   box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
   overflow: hidden;
-  z-index: 10;
+  z-index: 100;
 }
 
 .option_filter_item li {
@@ -1019,13 +1019,22 @@ td p:has(.material-symbols-outlined) {
 
 /* time line */
 .work_title {
-  position: relative;
   border-right: 1px solid rgba(15, 15, 15, 0.08);
 }
 
 .timeline_wrap .flex_box {
   position: relative;
-  padding-left: 40px;
+  margin-left: 40px;
+}
+
+
+/* .timeline_wrap .work_title {
+  overflow-x: scroll;
+  overflow-y: hidden;
+} */
+
+.timeline_wrap .x_scroll {
+  padding-left: 12px;
 }
 
 .time_area_wrap {
@@ -1082,16 +1091,17 @@ td p:has(.material-symbols-outlined) {
 
 .width_bar {
   position: absolute;
-  width: 8px;
+  width: 12px;
   cursor: e-resize;
-  left: 100%;
+  left: 0;
   top: 0;
   height: 100%;
-  box-shadow: transparent;
-
+  background-color: #777;
+  z-index: 10;
+  border-radius: 10px;
 }
 
-.width_bar::before {
+/* .width_bar::before {
   content: '';
   display: block;
   width: 3px;
@@ -1102,11 +1112,24 @@ td p:has(.material-symbols-outlined) {
   transform: translateX(-50%);
   background-color: rgba(15, 15, 15, 0.08);
   transition: backgrond-color, box-shadow 0.2s;
+} */
+
+.width_bar::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #aaa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  transition: background-color 0.2s;
 }
 
 .width_bar:hover::before {
-  background-color: #00c4ff;
-  box-shadow: -2px 0px 3px 0px #00c4ff7a;
+  background-color: #eee;
 }
 
 .x_scroll {
@@ -1147,6 +1170,10 @@ td p:has(.material-symbols-outlined) {
 
   .request_details textarea {
     width: 100%;
+  }
+
+  .width_bar::before {
+    background-color: #eee;
   }
 }
 

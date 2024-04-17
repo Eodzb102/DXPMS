@@ -76,37 +76,58 @@ $(function () {
     });
   }
 
-  drag();
+  setDrag();
 
-  function drag() {
-    let maxX = $('.work_title').outerWidth();
-    let barWidth = $('.width_bar').outerWidth();
-    let minX = 80 + barWidth;
+  function setDrag() {
+    let maxX = $('.timeline_wrap .work_title').width();
+    let minX = 80;
     let startX = 0;
     let delX = 0;
     let offsetX = 0;
+    let isTouched = false;
 
-    $('.width_bar').css({ left: maxX - barWidth / 2 + 'px' });
+    $('.width_bar').css({ left: maxX + 'px' });
 
-    $('.width_bar').on('mousedown', function (e) {
-      e.preventDefault();
+    $('.width_bar').on('mousedown touchstart', function (e) {
+      e = e.clientX === undefined ? e.touches[0] : e;
       startX = e.clientX;
       offsetX = $(this).position().left;
+      isTouched = true;
+    });
 
-      $(document).on('mousemove', function (e) {
-        delX = e.clientX - startX;
+    document.addEventListener('mousemove', move, { passive: false });
+    document.addEventListener('touchmove', move, { passive: false });
+
+    function move(e) {
+      if (isTouched === false) return false;
+      e.preventDefault();
+      e = e.clientX === undefined ? e.touches[0] : e;
+      delX = e.clientX - startX;
+      minLeft();
+      maxLeft();
+
+      function maxLeft() {
+        // 최대 넓이
+        if ($('.width_bar').position().left > maxX) {
+          $('.width_bar').css({ left: maxX + 'px' });
+          $('.work_title').css({ width: maxX });
+        }
+      }
+
+      function minLeft() {
+        // 최소 넓이
         if ($('.work_title').outerWidth() >= minX || delX > 0) {
           $('.width_bar').css({ left: offsetX + delX + 'px' });
-          $('.work_title').css({ width: offsetX + delX + barWidth / 3 + 'px' });
+          $('.work_title').css({ width: offsetX + delX + 'px' });
+        }
+      }
+
+      $(document).on('mouseup touchend', function (e) {
+        // maxLeft();
+        if (isTouched === true) {
+          isTouched = false;
         }
       });
-      $(document).on('mouseup', function () {
-        if ($('.width_bar').position().left > maxX) {
-          $('.work_title').css({ width: maxX });
-          $('.width_bar').css({ left: maxX - 4 + 'px' });
-        }
-        $(document).off('mousemove mouseup');
-      });
-    });
+    }
   }
 });
