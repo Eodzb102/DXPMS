@@ -1,7 +1,6 @@
-/* .wrap {
-  min-width: 1321px;
-  min-height: 600px;
-} */
+* {
+  box-sizing: content-box;
+}
 
 body,
 textarea,
@@ -54,7 +53,6 @@ body {
 
 .flex_box {
   display: flex;
-
 }
 
 .required {
@@ -214,7 +212,7 @@ button.more {
 }
 
 /* bullet */
-.list_progresse span::before {
+.list_progress span::before {
   content: '';
   display: block;
   width: 4px;
@@ -556,6 +554,7 @@ main {
   padding: 4px 10px;
   display: block;
   cursor: pointer;
+  margin-bottom: 0;
 }
 
 .option_filter_item li input {
@@ -575,7 +574,7 @@ main {
 }
 
 .option_text_search input {
-  height: 24px;
+  height: 32px;
   text-indent: 8px;
   border: 1px solid rgba(55, 53, 47, 0.16);
   font-size: 14px;
@@ -617,6 +616,7 @@ main {
 /* 리스트형 */
 .table_scroll {
   overflow-x: scroll;
+  overflow-y: hidden;
   padding: 0 60px 0 40px;
 }
 
@@ -690,7 +690,11 @@ td p:has(.material-symbols-outlined) {
   text-align: center;
 }
 
-.list_progresse span {
+.list_wrap .progress {
+  all: unset;
+}
+
+.list_progress span {
   position: relative;
   font-size: 12px;
   padding: 4px 8px 4px 14px;
@@ -700,9 +704,6 @@ td p:has(.material-symbols-outlined) {
 /* 보드형 */
 .board_wrap {
   padding: 0 40px;
-  box-sizing: border-box;
-  height: calc(100vh - 200px);
-  overflow-y: scroll;
 }
 
 .board_wrap .flex_box {
@@ -781,7 +782,10 @@ td p:has(.material-symbols-outlined) {
 .timeline_wrap,
 .board_wrap {
   display: none;
-  padding-bottom: 80px;
+  padding-bottom: 128px;
+  box-sizing: border-box;
+  height: calc(100vh - 200px);
+  overflow-y: scroll;
 }
 
 .list_wrap.on,
@@ -831,7 +835,7 @@ td p:has(.material-symbols-outlined) {
   position: relative;
   border-radius: 6px;
   padding: 2px 6px;
-  margin: 4px 2px 4px 0;
+  margin: 2px 2px 4px 0;
   font-size: 12px;
 }
 
@@ -918,14 +922,14 @@ td p:has(.material-symbols-outlined) {
 .request_details label input[type="radio"],
 .request_details label input[type="ckeckbox"],
 .request_details label input[type="date"] {
-  height: 15px;
+  height: 30px;
 }
 
 .request_details div label:last-of-type {
   margin-right: 0;
 }
 
-.request_details input[type="text"] {
+.request_details input[type="text"]:not(.form-control) {
   all: unset;
   box-sizing: border-box;
   width: 100%;
@@ -933,7 +937,7 @@ td p:has(.material-symbols-outlined) {
   border-bottom: 1px solid rgba(15, 15, 15, 0.3);
 }
 
-.request_details input[type="text"]:focus {
+.request_details input[type="text"]:not(.form-control):focus {
   border-bottom: 2px solid #1a73e8;
 }
 
@@ -1020,6 +1024,10 @@ td p:has(.material-symbols-outlined) {
 /* time line */
 .work_title {
   border-right: 1px solid rgba(15, 15, 15, 0.08);
+  flex-shrink: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 60vw;
 }
 
 .timeline_wrap .flex_box {
@@ -1027,14 +1035,13 @@ td p:has(.material-symbols-outlined) {
   margin-left: 40px;
 }
 
-
 /* .timeline_wrap .work_title {
   overflow-x: scroll;
   overflow-y: hidden;
 } */
 
 .timeline_wrap .x_scroll {
-  padding-left: 12px;
+  padding-left: 9px;
 }
 
 .time_area_wrap {
@@ -1056,25 +1063,28 @@ td p:has(.material-symbols-outlined) {
   border-bottom: 1px solid rgba(15, 15, 15, 0.08);
   box-sizing: border-box;
   margin-left: -1px;
+  height: 50.5px;
 }
 
 .time_area_head ol li:first-child {
   border-left: none;
+  margin-left: 4px;
 }
 
 .time_week_title {
+  height: 20px;
   text-align: center;
 }
 
 .time_week_days li {
-  margin: 0 10px 2px;
+  margin: 0 4px;
   font-size: 12px;
-  padding: 4px;
+  padding: 4px 10px;
   border-radius: 4px;
 }
 
 .time_area_body {
-  /* display: none; */
+  overflow: hidden;
 }
 
 .time_area_body li {
@@ -1091,28 +1101,15 @@ td p:has(.material-symbols-outlined) {
 
 .width_bar {
   position: absolute;
-  width: 12px;
+  width: 10px;
   cursor: e-resize;
   left: 0;
   top: 0;
   height: 100%;
-  background-color: #777;
+  background-color: #ccc;
   z-index: 10;
   border-radius: 10px;
 }
-
-/* .width_bar::before {
-  content: '';
-  display: block;
-  width: 3px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(15, 15, 15, 0.08);
-  transition: backgrond-color, box-shadow 0.2s;
-} */
 
 .width_bar::before {
   content: '';
@@ -1120,7 +1117,7 @@ td p:has(.material-symbols-outlined) {
   width: 4px;
   height: 50px;
   border-radius: 10px;
-  background-color: #aaa;
+  background-color: #999;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1129,7 +1126,7 @@ td p:has(.material-symbols-outlined) {
 }
 
 .width_bar:hover::before {
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .x_scroll {
@@ -1138,25 +1135,105 @@ td p:has(.material-symbols-outlined) {
   overflow-y: hidden;
 }
 
-
-.time_area_body .list_progresse {
+.time_area_body .list_progress {
   position: relative;
   height: 100%;
+  background: none;
 }
 
-.time_area_body .list_progresse span {
+.time_area_body .list_progress span {
   position: absolute;
   top: 50%;
   left: 10px;
-  transform: translateY(-50%);
+  transform: translate(-8px, -50%);
   line-height: normal;
   white-space: nowrap;
+  box-sizing: border-box;
 }
 
 /* .option_today {
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: lightcoral;
 } */
+
+.filter_date {
+  width: 100%;
+  display: flex;
+}
+
+.filter_date button {
+  height: 35px;
+  line-height: 35px;
+  border-radius: 4px;
+  background-color: #0C66E4;
+  font-size: 14px;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 0 8px;
+}
+
+label:has(.form-control) {
+  width: 150px;
+  position: relative;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+.form-control + span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.form-control {
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.datepicker > div {
+  box-sizing: unset;
+  padding: 0 12px;
+}
+
+.datepicker table {
+  width: 100%;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+
+.datepicker th {
+  text-align: center;
+}
+
+.datepicker .dow {
+  font-size: 14px;
+}
+
+.table-condensed td span,
+.datepicker .day {
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.table-condensed td span:hover,
+.datepicker .day:hover {
+  background-color: rgba(255, 0, 0, 0.324);
+}
+
+.table-condensed td span {
+  margin-left: 4px;
+}
+
+.datepicker .datepicker-switch,
+.datepicker .prev,
+.datepicker .next {
+  cursor: pointer;
+}
 
 @media screen and (max-width: 1567px) {
   .option_text_search {
@@ -1173,12 +1250,6 @@ td p:has(.material-symbols-outlined) {
   }
 
   .width_bar::before {
-    background-color: #eee;
-  }
-}
-
-@media screen and (max-height: 800px) {
-  body {
-    overflow: auto;
+    background-color: #fff;
   }
 }

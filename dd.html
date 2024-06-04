@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-3.6.1.min.js"></script>
+  </head>
+  <style>
+    .DDY_select {
+      position: relative;
+    }
+    .DDY_select .select {
+      position: relative;
+      min-width: 160px;
+      height: 40px;
+      border: 1px solid var(--clr-616161);
+      overflow: hidden;
+      border-radius: 4px;
+      background-color: var(--clr-FFFFFF);
+      box-sizing: border-box;
+    }
+    .DDY_select .select::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      width: 24px;
+      height: 25px;
+      transform: translate(0, -50%);
+      background: url('../images/select_arrow.svg') center no-repeat;
+    }
+    .DDY_select .select.offline {
+      border: 0 none;
+      width: 150px;
+      min-width: 150px;
+    }
+    .DDY_select .select.disable {
+      background-color: var(--clr-EEEEEE);
+      border-color: var(--clr-BDBDBD);
+    }
+    .DDY_select .select.disable button {
+      color: var(--clr-BDBDBD);
+    }
+    .DDY_select .select.disable::after {
+      content: '';
+      background: url('../images/select_arrow_disable.svg') center no-repeat;
+    }
+    .DDY_select .select.disable.font_c button {
+      color: var(--clr-BDBDBD);
+    }
+    .DDY_select .select.error {
+      border-color: var(--clr-E53935);
+      outline: var(--clr-E53935);
+    }
+    .DDY_select .select.error.font_c button {
+      color: var(--clr-BDBDBD);
+    }
+    .DDY_select .select.error ~ .errorText {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--clr-E53935);
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .DDY_select .select button {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      padding: 8px 12px;
+      color: var(--clr-BDBDBD);
+    }
+    .DDY_select .select.font_c button {
+      color: var(--clr-555555);
+    }
+    .DDY_select .select.active {
+      border-color: var(--clr-FFFFFF);
+    }
+    .DDY_select .select.active:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid var(--clr-323DA3);
+      border-radius: 4px;
+    }
+    .DDY_select .select.active::after {
+      content: '';
+      transform: translate(0, -50%) rotate(180deg);
+    }
+    .DDY_select .select ~ .errorText {
+      display: none;
+    }
+    .DDY_select .option {
+      display: none;
+      padding: 8px;
+      margin-top: 8px;
+      background-color: var(--clr-FFFFFF);
+      position: absolute;
+      top: auto;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+      border: 1px solid var(--clr-616161);
+      border-radius: 4px;
+      box-sizing: border-box;
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+      max-height: 250px;
+    }
+    .DDY_select .option.active {
+      display: block;
+    }
+    .DDY_select .option ul {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      height: 100%;
+      max-height: 232px;
+      overflow-y: auto;
+    }
+    .DDY_select .option ul::-webkit-scrollbar {
+      width: 4px; /* 세로축 스크롤바 폭 너비 */
+      height: 120px; /* 가로축 스크롤바 폭 너비 */
+    }
+    .DDY_select .option ul::-webkit-scrollbar-thumb {
+      background: var(--clr-E0E0E0); /* 스크롤바 막대 색상 */
+      border-radius: 12px 12px 12px 12px;
+    }
+    .DDY_select .option ul ::-webkit-scrollbar-track {
+      background: var(--clr-333333); /*스크롤바 뒷 배경 색상*/
+    }
+    .DDY_select .option ul li {
+      padding-left: 12px;
+      padding-right: 8px;
+      width: 100%;
+      height: 36px;
+    }
+    .DDY_select .option ul li:hover {
+      border-radius: 4px;
+      background-color: var(--clr-EFF1FD);
+      transition: all 0.2s;
+      border-radius: 4px;
+    }
+    .DDY_select .option ul li.checked {
+      background: var(--clr-EFF1FD) url('../images/DDY_select_checked.svg') center right 8px no-repeat;
+      border-radius: 4px;
+    }
+    .DDY_select .option ul li.checked button {
+      color: var(--clr-323DA3);
+      font-weight: 700;
+    }
+    .DDY_select .option ul li.disable {
+      background-color: var(--clr-EEEEEE);
+      border-radius: 4px;
+    }
+    .DDY_select .option ul li.disable button {
+      color: var(--clr-BDBDBD);
+    }
+    .DDY_select .option ul li button {
+      width: 100%;
+      height: 100%;
+      text-align: left;
+    }
+    .DDY_select > p:first-child {
+      display: block;
+      margin-bottom: 4px;
+      color: #616161;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .DDY_select > p:last-child {
+      display: block;
+      margin-top: 8px;
+      color: var(--clr-E53935);
+    }
+  </style>
+  <body>
+    <div class="DDY_select">
+      <p>info</p>
+      <div class="select">
+        <button type="button">전체</button>
+      </div>
+      <div class="option">
+        <ul>
+          <li class="disable">
+            <button type="button">서울특별시</button>
+          </li>
+          <li class="checked">
+            <button type="button">부산광역시</button>
+          </li>
+          <li><button type="button">대구광역시</button></li>
+          <li><button type="button">인천광역시</button></li>
+          <li><button type="button">광주광역시</button></li>
+          <li><button type="button">대전광역시</button></li>
+          <li><button type="button">울산광역시</button></li>
+          <li>
+            <button type="button">세종특별자치시</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="DDY_select">
+      <p>info</p>
+      <div class="select">
+        <button type="button">전체</button>
+      </div>
+      <div class="option">
+        <ul>
+          <li class="disable">
+            <button type="button">서울특별시</button>
+          </li>
+          <li class="checked">
+            <button type="button">부산광역시</button>
+          </li>
+          <li><button type="button">대구광역시</button></li>
+          <li><button type="button">인천광역시</button></li>
+          <li><button type="button">광주광역시</button></li>
+          <li><button type="button">대전광역시</button></li>
+          <li><button type="button">울산광역시</button></li>
+          <li>
+            <button type="button">세종특별자치시</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="DDY_select">
+      <p>info</p>
+      <div class="select">
+        <button type="button">전체</button>
+      </div>
+      <div class="option">
+        <ul>
+          <li class="disable">
+            <button type="button">서울특별시</button>
+          </li>
+          <li class="checked">
+            <button type="button">부산광역시</button>
+          </li>
+          <li><button type="button">대구광역시</button></li>
+          <li><button type="button">인천광역시</button></li>
+          <li><button type="button">광주광역시</button></li>
+          <li><button type="button">대전광역시</button></li>
+          <li><button type="button">울산광역시</button></li>
+          <li>
+            <button type="button">세종특별자치시</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      //selectBox jquery
+      $('.DDY_select .select').click(function () {
+        var option = $(this).siblings('.option');
+        $(this).toggleClass('active');
+        option.toggleClass('active');
+        if ($(this).hasClass('disable')) {
+          $(this).removeClass('active');
+          option.removeClass('active');
+        }
+        if ($('.DDY_select .select').not(this).hasClass('active')) {
+          $('.DDY_select .select').not(this).removeClass('active').siblings('.option').removeClass('active');
+        }
+      });
+      //option 클릭시 remove
+      $('.option button').click(function () {
+        var text = $(this).text();
+        $(this).closest('.DDY_select').find('.select button').text(text);
+        $(this).closest('.option').removeClass('active');
+        $('.DDY_select .select').removeClass('active');
+        $(this).closest('.DDY_select').find('.select').addClass('font_c');
+      });
+      //영역밖 클릭시 remove
+      $(document).on('click', function (e) {
+        if ($(e.target).closest('.DDY_select').length > 0) {
+          return;
+        }
+        $('.DDY_select .option').removeClass('active');
+        $('.DDY_select .select').removeClass('active');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="dd.css" />
+  </head>
+
+  <body class="">
+    <h1 id="title">몬테소리몰</h1>
+    <dl id="skip">
+      <dt class="hidden">바로가기 메뉴</dt>
+      <dd><a href="#gnb">주메뉴 바로가기</a></dd>
+      <dd><a href="#contents">본문 바로가기</a></dd>
+    </dl>
+
+    <div id="wrap" class="">
+      <style>
+        @media (max-width: 992px) {
+          .gnb-mo {
+            height: calc(var(--vh, 1vh) * 100 - 150px);
+          }
+        }
+      </style>
+
+      <!-- gnb -->
+      <header id="gnb" class="">
+        <div class="gnb-com">
+          <div class="container">
+            <h2 class="gnb-com__logo">
+              <a href="/">한국몬테소리 montessori</a>
+            </h2>
+            <a href="javascript:goCartList();" class="gnb-com__basket on">장바구니</a>
+            <button type="button" onclick="gnbClose();" class="gnb-com__close">닫기</button>
+          </div>
+        </div>
+
+        <div class="gnb-mo">
+          <div class="gnb-mo__inner">
+            <div class="gnb-mo__scroll">
+              <div class="gnb-top">
+                <div class="container">
+                  <ul class="gnb-top__menu">
+                    <li><a href="https://stage-www.montessori.co.kr/">홈페이지</a></li>
+                    <li><a href="https://stage-www.montessori.co.kr//order/welcomekids.do">한국몬테소리 웰컴키즈</a></li>
+                    <li><a href="https://stage-www.montessori.co.kr//html/monteUlsan.do">한국몬테소리 학원</a></li>
+                    <li><a href="https://stage-www.montessori.co.kr//board/boardlist.do?bmno=1026">몬테소리 교육영상</a></li>
+                    <li><a href="https://stage-www.montessori.co.kr//html/monteClassic.do">몬테소리 클래식</a></li>
+                  </ul>
+                  <div class="gnb-top__member">
+                    <!-- 로그인후 -->
+
+                    <div class="gnb-top__user">
+                      <p><span>임정희 회원님,</span> 반갑습니다.</p>
+                    </div>
+                    <ul class="gnb-top__login">
+                      <li><a href="https://stage-public.montessori.co.kr/mypage/shopp/orderDelivery.do" class="org">마이페이지</a></li>
+                      <li><a href="https://stage-public.montessori.co.kr/cscenter/main.do" class="cs">고객센터</a></li>
+                      <li><a href="https://stage-public.montessori.co.kr/cscenter/asservice.do" class="cs">A/S 신청하기</a></li>
+                      <li><a href="javascript:void(0);" onclick="javascript:logout();">로그아웃</a></li>
+                    </ul>
+                    <!-- 로그인후 -->
+                  </div>
+                </div>
+              </div>
+              <!-- gnb-top -->
+
+              <div class="gnb-bot">
+                <div class="container">
+                  <div class="gnb-bot__inner">
+                    <ul class="gnb-bot__menu sub">
+                      <li><a href="/item/list.do">전체 상품</a></li>
+
+                      <li><a href="/item/list.do?cd=1155">몬테소리상품</a></li>
+
+                      <li><a href="/item/list.do?cd=1156">도서/단품</a></li>
+
+                      <li><a href="/item/list.do?cd=1157">아이힘</a></li>
+                    </ul>
+                    <ul class="gnb-bot__menu main">
+                      <li><a href="/item/outletlist.do" style="color: rgb(235, 28, 36)">아울렛</a></li>
+
+                      <li><a href="/item/bestlist.do">베스트</a></li>
+                      <li><a href="/item/rclist.do">추천상품</a></li>
+                      <li><a href="/item/event.do">이벤트</a></li>
+                      <li><a href="/item/monte.do">몬테소리하우스</a></li>
+                    </ul>
+                    <form action="/item/list.do" method="get">
+                      <div class="gnb-bot__search">
+                        <input type="text" name="prdname" id="" class="sch_input" />
+                        <input type="text" name="linkType" value="shc" style="display: none" />
+                        <!-- <label for="search">검색</label> -->
+                        <button onclick="moSchOpen();">검색</button>
+                      </div>
+                      <!-- <a href="javascript:moSchOpen();" class="gnb-bot__search--btn">검색</a> -->
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- gnb-bot -->
+            </div>
+            <!-- gnb-mo -->
+          </div>
+          <!-- gnb-mo__inner -->
+        </div>
+        <!-- gnb-mo__scroll -->
+
+        <div class="gnb-mo__menu">
+          <ul>
+            <li><a href="/item/list.do">전체 상품</a></li>
+
+            <li><a href="/item/outletlist.do" style="color: rgb(235, 28, 36)">아울렛</a></li>
+
+            <li><a href="/item/bestlist.do">베스트</a></li>
+            <li><a href="/item/rclist.do">추천상품</a></li>
+            <li><a href="/item/event.do">이벤트</a></li>
+          </ul>
+          <!-- gnb-mo__menu -->
+        </div>
+      </header>
+      <!-- gnb -->
+
+      <div class="mo-sch">
+        <div class="mo-sch__inner">
+          <div class="mo-sch__box">
+            <h4 class="mo-sch__title">검색하기</h4>
+            <div class="mo-sch__form">
+              <form action="/item/list.do" method="get">
+                <input type="text" name="prdname" id="" class="mo-sch__input sch_input" onkeyup="moSchIpt();" placeholder="제품명을 입력해주세요" />
+                <input type="text" name="linkType" value="shc" style="display: none" />
+                <span></span>
+                <button type="button" class="mo-sch__del" onclick="moSchDel();">삭제</button>
+              </form>
+            </div>
+            <!-- mo-sch__form -->
+            <dl class="mo-sch__related">
+              <dt>연관상품</dt>
+              <dd>
+                <ul class="mo-sch__list"></ul>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <button type="button" onclick="moSchClose();" class="mo-sch__close">닫기</button>
+      </div>
+      <!-- mo-sch -->
+
+      <nav id="bot-nav">
+        <ul>
+          <li><a href="/">홈</a></li>
+          <li><a href="javascript:gnbOpen();">메뉴</a></li>
+          <li><a href="javascript:moSchOpen();">검색</a></li>
+
+          <li><a href="https://stage-public.montessori.co.kr/mypage/activity/consulting.do">마이페이지</a></li>
+
+          <li><a href="https://stage-public.montessori.co.kr/mypage/shopp/lastViewItem.do">최근본상품</a></li>
+        </ul>
+      </nav>
+      <!-- bot-nav -->
+
+      <!-- gnb -->
+
+      <iframe src="" style="display: none" id="temp1" name="temp1"></iframe>
+      <iframe src="" style="display: none" id="temp2" name="temp2"></iframe>
+
+      <script type="text/javascript">
+        $(document).ready(function () {
+          console.log('params_gnb : ', '{authCookieName=C_USER_NO_MONTESORI_stage, cartnos=all, muid=f1200e0f-084b-4fcd-a61f-ba45538e0509, ruid=42da28a2-ec8e-485e-b53b-12f59fda0ed3, stkItemkeys=3,21,122,17, uip=61.41.150.126, uno=107, arrItemkeys=[Ljava.lang.String;@232fb8f7, dvryfee=3500, dvryJejufee=2800, freeDvryFee=50000}');
+        });
+
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', vh + 'px');
+
+        $('.sch_input').on('keydown', function (e) {
+          //엔터로그인
+          if (e.keyCode == 13) {
+            $(this).parents('form').submit();
+          }
+        });
+
+        function logout() {
+          commonAjax('membership/logout.do', '', function (r) {
+            location.replace('https://stage-public.montessori.co.kr/membership/logoutPublish.do?returnUrl=' + location.protocol + '//' + location.hostname + '/' + gContextUrl);
+          });
+        }
+      </script>
+
+      <section id="contents" class="sub">
+        <div class="container">
+          <script src="https://js.tosspayments.com/v1/payment"></script>
+
+          <h3 class="sub-title">주문하기</h3>
+
+          <form id="mform" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <div class="ord-wrap">
+              <div class="ord-left">
+                <div class="ord-title"><h4>주문상품 (6개)</h4></div>
+                <!-- ord-title -->
+                <div class="ord-list">
+                  <div class="ord-list__group">
+                    <p class="ord_list_limit">※ 쿠폰 최대 사용 한도는 30,000원입니다.</p>
+
+                    <div class="ord-list__item">
+                      <em class="ord-list__thumb" style="background: url('/common/image.view?fgno=2214&amp;hashid=J3RUXMbcMC0xn3x6tRcW1oom6J7f1zR1') no-repeat center center / cover"></em>
+
+                      <div class="ord-list__title">
+                        <a href="/product/product_detail.do?itemkey=3" style="/* pointer-events: none; */">리틀몬테소리</a>
+                        <p class="ord-list__cnt only_m">1개</p>
+                        <span class="ord-list__cost__mb"><b>1,390,000</b>원</span>
+                        <span class="ord-list__discount only_m">쿠폰할인 -<em>3,000원</em></span>
+                        <div class="ord-list__coupon only_pc">
+                          <p class="coupon_select"><button type="button">쿠폰을 선택해 주세요.</button><img src="/resources/img/common/select_sm.png" alt="더보기" /></p>
+                          <ul class="coupon_option">
+                            <li><button type="button">베이비 몬테소리 10% 특별 할인 쿠폰</button></li>
+                            <li><button type="button">베이비 몬테소리 20% 특별 할인 쿠폰</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="ord-list__info only_pc">
+                        <p class="ord-list__cnt">1개</p>
+                        <span class="ord-list__cost"><b>1,390,000</b>원</span>
+                        <span class="ord-list__discount">쿠폰할인 -<em>3,000원</em></span>
+                      </div>
+                      <div class="ord-list__coupon only_m">
+                        <p class="coupon_select"><button type="button">쿠폰을 선택해 주세요.</button><img src="/resources/img/common/select_sm.png" alt="더보기" /></p>
+                        <ul class="coupon_option">
+                          <li><button type="button">베이비 몬테소리 10% 특별 할인 쿠폰</button></li>
+                          <li><button type="button">베이비 몬테소리 20% 특별 할인 쿠폰</button></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="ord-list__item">
+                      <em class="ord-list__thumb" style="background: url('/common/image.view?fgno=2233&amp;hashid=8qqFyN30Y8a305fVB73gbJSurtulOoYO') no-repeat center center / cover"></em>
+
+                      <div class="ord-list__title">
+                        <a href="/product/product_detail.do?itemkey=21" style="/* pointer-events: none; */">아베크랑팡 (영문판)</a>
+                        <p class="ord-list__cnt only_m">1개</p>
+                        <span class="ord-list__cost__mb"><b>650,000</b>원</span>
+                        <span class="ord-list__discount only_m">쿠폰할인 -<em>3,000원</em></span>
+                        <div class="ord-list__coupon only_pc">
+                          <p class="coupon_select"><button type="button">쿠폰을 선택해 주세요.</button><img src="/resources/img/common/select_sm.png" alt="더보기" /></p>
+                          <ul class="coupon_option">
+                            <li><button type="button">베이비 몬테소리 10% 특별 할인 쿠폰</button></li>
+                            <li><button type="button">베이비 몬테소리 20% 특별 할인 쿠폰</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="ord-list__info only_pc">
+                        <p class="ord-list__cnt">1개</p>
+                        <span class="ord-list__cost"><b>650,000</b>원</span>
+                        <span class="ord-list__discount">쿠폰할인 -<em>3,000원</em></span>
+                      </div>
+                      <div class="ord-list__coupon only_m">
+                        <p class="coupon_select"><button type="button">쿠폰을 선택해 주세요.</button><img src="/resources/img/common/select_sm.png" alt="더보기" /></p>
+                        <ul class="coupon_option">
+                          <li><button type="button">베이비 몬테소리 10% 특별 할인 쿠폰</button></li>
+                          <li><button type="button">베이비 몬테소리 20% 특별 할인 쿠폰</button></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="ord-list__item">
+                      <em class="ord-list__thumb" style="background: url('/resources/img/common/empty_image_product.jpg') no-repeat center center / cover"></em>
+
+                      <div class="ord-list__title">
+                        <a href="/product/product_detail.do?itemkey=122" style="/* pointer-events: none; */">파닉스</a>
+                        <p class="ord-list__cnt only_m">1개</p>
+                        <span class="ord-list__cost__mb"><b>50,000</b>원</span>
+                        <span class="ord-list__discount only_m">쿠폰할인 -<em>3,000원</em></span>
+                        <div class="ord-list__coupon only_pc">
+                          <p class="coupon_select"><button type="button">쿠폰을 선택해 주세요.</button><img src="/resources/img/common/select_sm.png" alt="더보기" /></p>
+                          <ul class="coupon_option">
+                            <li><button type="button">베이비 몬테소리 10% 특별 할인 쿠폰</button></li>
+                            <li><button type="button">베이비 몬테소리 20% 특별 할인 쿠폰</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="ord-list__info only_pc">
+                        <p class="ord-list__cnt">1개</p>
+                        <span class="ord-list__cost"><b>50,000</b>원</span>
+                        <span class="ord-list__discount">쿠폰할인 -<em>3,000원</em></span>
+                      </div>
+                      <div class="ord-list__coupon only_m">
+                        <p class="coupon_select"><button type="button">쿠폰을 선택해 주세요.</button><img src="/resources/img/common/select_sm.png" alt="더보기" /></p>
+                        <ul class="coupon_option">
+                          <li><button type="button">베이비 몬테소리 10% 특별 할인 쿠폰</button></li>
+                          <li><button type="button">베이비 몬테소리 20% 특별 할인 쿠폰</button></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="ord-list__item">
+                      <em class="ord-list__thumb" style="background: url('/common/image.view?fgno=3074&amp;hashid=WMol5iLw3sO7GG3sk43qSR2H1TZa362S') no-repeat center center / cover"></em>
+
+                      <div class="ord-list__title">
+                        <a href="/product/product_detail.do?itemkey=17" style="/* pointer-events: none; */">베이비몬테소리 (교구 9종)</a>
+                        <p class="ord-list__cnt only_m">3개</p>
+                        <span class="ord-list__cost__mb"><b>2,250,000</b>원</span>
+                        <span class="ord-list__discount only_m">쿠폰할인 -<em>3,000원</em></span>
+                        <div class="ord-list__coupon only_pc">
+                          <p class="coupon_select"><button type="button">쿠폰을 선택해 주세요.</button><img src="/resources/img/common/select_sm.png" alt="더보기" /></p>
+                          <ul class="coupon_option">
+                            <li><button type="button">베이비 몬테소리 10% 특별 할인 쿠폰</button></li>
+                            <li><button type="button">베이비 몬테소리 20% 특별 할인 쿠폰</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="ord-list__info only_pc">
+                        <p class="ord-list__cnt">3개</p>
+                        <span class="ord-list__cost"><b>2,250,000</b>원</span>
+                        <span class="ord-list__discount">쿠폰할인 -<em>3,000원</em></span>
+                      </div>
+                      <div class="ord-list__coupon only_m">
+                        <p class="coupon_select"><button type="button">쿠폰을 선택해 주세요.</button><img src="/resources/img/common/select_sm.png" alt="더보기" /></p>
+                        <ul class="coupon_option">
+                          <li><button type="button">베이비 몬테소리 10% 특별 할인 쿠폰</button></li>
+                          <li><button type="button">베이비 몬테소리 20% 특별 할인 쿠폰</button></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <input type="hidden" id="nonUser" name="nonUser" value="false" />
+                <div class="ord-title">
+                  <h4>배송지</h4>
+                  <a href="javascript:popOpen('dvry-pop1');" class="sub-btn">변경/추가</a>
+                </div>
+
+                <div class="ord-addr__chk">
+                  <ul class="list-chk">
+                    <li>
+                      <input type="radio" name="shopaddr" id="shopaddr_0" onchange="setAddr('0')" value="7" />
+                      <label for="shopaddr_0">몬테소리</label>
+                    </li>
+                    <input type="hidden" id="addrnm0" value="몬테소리" />
+                    <input type="hidden" id="addr10" value="서울 서초구 강남대로 399 (서초동, 몬테소리)" />
+                    <input type="hidden" id="addr20" value="7층" />
+                    <input type="hidden" id="buildingcode0" value="1165010800113180008019994" />
+                    <!-- 건물관리번호 -->
+                    <input type="hidden" id="recipient0" value="임정희" />
+                    <input type="hidden" id="addrphone0" value="01099136112" />
+                    <input type="hidden" id="addrpost0" value="06615" />
+                  </ul>
+                </div>
+
+                <div class="ord-addr__info">
+                  <h5 id="dvryid"></h5>
+                  <p id="dvryAddr"></p>
+                  <div class="ord-mileage">
+                    <input type="text" name="pcomment" id="pcomment" placeholder="배송요청사항 입력" style="text-align: left" />
+                  </div>
+                </div>
+                <!-- ord-addr__info -->
+
+                <div class="ord-title">
+                  <h4>결제 수단<span class="red hidden" id="ordFree">추가결제 없음</span></h4>
+                </div>
+                <!-- ord-title -->
+                <ul class="ord-pay">
+                  <li><input type="radio" name="ptype" id="ord-pay1" value="카드" ptype="1" onchange="changePtype()" checked="" /><label for="ord-pay1">신용카드</label></li>
+                  <li><input type="radio" name="ptype" id="ord-pay2" value="계좌이체" ptype="2" onchange="changePtype()" /><label for="ord-pay2">계좌이체</label></li>
+
+                  <li><input type="radio" name="ptype" id="ord-pay3" value="7" ptype="7" onchange="changePtype()" /><label for="ord-pay3">무통장입금</label></li>
+
+                  <!-- <li><input type="radio" name="ptype" id="ord-pay4" value="8" ptype="8" onchange="changePtype()"/><label for="ord-pay4">네이버페이</label></li> -->
+                </ul>
+                <!-- ord-pay -->
+
+                <dl class="ord-depositor" style="display: none">
+                  <dt>입금자명</dt>
+                  <dd><input type="text" name="dipositor" id="dipositor" value="임정희" style="text-align: left" maxlength="20" /></dd>
+                  <dd class="notice">
+                    * 입금 기한 : 주문 시간 기준 2영업일까지 <br />
+                    * 입금 기한이 지난 주문 건은 자동 취소되며 이후 입금하신 경우 주문이 진행되지 않으니 고객센터로 문의하시기 바랍니다.
+                  </dd>
+                </dl>
+
+                <div class="ord-title cashReceipt" style="display: none">
+                  <h4>현금영수증/계산서 발행</h4>
+                </div>
+                <div class="ord-addr__chk cashReceipt" style="display: none">
+                  <ul class="list-chk">
+                    <li><input type="radio" name="cashReceiptType1" id="cashReceiptType1-1" onclick="cashReceipt();" value="미발행" /><label for="cashReceiptType1-1">미발행</label></li>
+                    <li><input type="radio" name="cashReceiptType1" id="cashReceiptType1-2" onclick="cashReceipt('2');" value="현금영수증" /><label for="cashReceiptType1-2">현금영수증</label></li>
+                    <li><input type="radio" name="cashReceiptType1" id="cashReceiptType1-3" onclick="cashReceipt('2');changeCashReceiptType2('3');" value="세금계산서" /><label for="cashReceiptType1-3">세금계산서</label></li>
+                  </ul>
+
+                  <ul class="ord-receipt" id="receipt2" style="display: block">
+                    <li class="" id="receipt2-0">
+                      <dl>
+                        <dt>현금영수증 종류</dt>
+                        <dd>
+                          <ul class="list-chk">
+                            <li><input type="radio" name="cashReceiptType2" id="cashReceiptType2-1" onclick="changeCashReceiptType2('1');" value="소득공제용" /><label for="cashReceiptType2-1">소득공제용</label></li>
+                            <li><input type="radio" name="cashReceiptType2" id="cashReceiptType2-2" onclick="changeCashReceiptType2('2');" value="지출증빙용" /><label for="cashReceiptType2-2">지출증빙용</label></li>
+                          </ul>
+                        </dd>
+                      </dl>
+                    </li>
+                    <li class="ord-receipt2" id="receipt2-1" style="display: none">
+                      <dl>
+                        <dt>휴대폰번호</dt>
+                        <dd><input type="text" name="cashReceiptMobile" id="cashReceiptMobile" value="" placeholder="휴대폰번호를 입력해 주세요." maxlength="11" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" /></dd>
+                      </dl>
+                    </li>
+                    <li class="ord-receipt2" id="receipt2-2" style="display: list-item">
+                      <dl>
+                        <dt>사업자등록증 등록</dt>
+                        <dd>
+                          <input type="file" name="fgno" id="cashReceiptFgno1" />
+                        </dd>
+                      </dl>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="ord-right">
+                <div class="ord-box" style="top: 1px">
+                  <div class="ord-amount">
+                    <dl class="ord-detail">
+                      <dt>최종 주문금액</dt>
+                      <dd>
+                        <h5>총 상품 금액</h5>
+                        <p><b id="itemtotal">4,340,000</b>원</p>
+                      </dd>
+
+                      <dd>
+                        <h5>쿠폰할인</h5>
+                        <p><b id="usecp">0</b>원</p>
+                      </dd>
+
+                      <dd id="dvry">
+                        <h5>배송비</h5>
+                        <p><b>0</b>원</p>
+                      </dd>
+                      <dd id="extraDvry" style="display: none">
+                        <h5>추가배송비</h5>
+                        <p><b>2,800</b>원</p>
+                      </dd>
+                    </dl>
+                    <dl class="ord-total">
+                      <dt>최종 결제금액</dt>
+                      <dd><b id="alltotal">4,340,000</b>원</dd>
+                    </dl>
+                  </div>
+                  <!-- ord-amount -->
+
+                  <!-- ord-privacy -->
+                  <div class="ord-fixed">
+                    <button type="button" class="ord-submit" onclick="goPayment()"><span class="red">₩</span><span class="red" id="alltotal-red">4,340,000</span> 결제하기</button>
+                  </div>
+                </div>
+                <!-- ord-box -->
+              </div>
+              <!-- ord-right -->
+            </div>
+            <!-- ord-wrap -->
+          </form>
+
+          <script type="text/javascript">
+            $(document).ready(function () {
+              $('.coupon_select').on('click', function () {
+                var option = $(this).siblings('.coupon_option');
+                $(this).toggleClass('active');
+                option.toggleClass('active');
+
+                if ($('.coupon_select').hasClass('active') && $(this).next('.coupon_option').length == 1) {
+                  $(this).find('button').text('쿠폰을 선택해 주세요.');
+                  $(this).find('button').css({ color: '#838383' });
+                } else {
+                  var text = $(this).text();
+                  $(this).find('button').text(text);
+                }
+                if ($('.coupon_select').not(this).hasClass('active')) {
+                  $('.coupon_select').not(this).removeClass('active').siblings('.coupon_option').removeClass('active');
+                }
+              });
+
+              $('.coupon_option button').click(function () {
+                var text = $(this).text();
+                $(this).closest('.ord-list__coupon').find('.coupon_select button').text(text);
+                $(this).closest('.ord-list__coupon').find('.coupon_select button').css({ color: '#111' });
+                $(this).closest('.coupon_option').removeClass('active');
+                $('.coupon_select').removeClass('active');
+              });
+
+              $(document).on('click', function (e) {
+                if ($(e.target).closest('.ord-list__coupon').length > 0) {
+                  return;
+                }
+                $('.coupon_select').removeClass('active');
+                $('.coupon_option').removeClass('active');
+              });
+            });
+          </script>
+        </div>
+      </section>
+
+      <footer id="footer">
+        <div class="container">
+          <div class="ft-sns">
+            <li><a href="https://blog.naver.com/montessori_1975" class="ft-sns__naver" alt="한국몬테소리 네이버 블로그 바로가기">naver </a></li>
+            <li><a href="https://www.instagram.com/montessori_korea/" class="ft-sns__instagram" alt="한국몬테소리 인스타그램 바로가기">instagram </a></li>
+            <!-- <li><a href="https://www.facebook.com/KoreaMontessori/"   class="ft-sns__facebook"  alt="한국몬테소리  페이스북 채널 바로가기" >facebook	</a></li> -->
+            <li><a href="https://www.youtube.com/@montessorikorea" class="ft-sns__youtube" alt="한국몬테소리 유투브 채널 바로가기">youtube </a></li>
+          </div>
+          <div class="ft-top">
+            <div class="ft-top__time">
+              <h5>1544-3384</h5>
+              <p>(월~금 09:00 ~ 17:30 /공휴일 휴무)</p>
+            </div>
+            <ul class="ft-top__menu">
+              <li><a href="https://stage-www.montessori.co.kr//htmlView.do?pno=1306">회사소개</a></li>
+              <li><a href="https://stage-www.montessori.co.kr/" class="link">한국몬테소리</a></li>
+              <li><a href="https://stage-www.montessori.co.kr//board/boardlist.do?bmno=25&amp;pno=334">공지사항</a></li>
+              <li><a href="https://stage-public.montessori.co.kr/board/boardlist.do?bmno=3">자주묻는질문</a></li>
+              <li><a href="https://stage-www.montessori.co.kr//htmlView.do?pno=1330">이용약관</a></li>
+              <li><a href="https://stage-www.montessori.co.kr//htmlView.do?pno=1341">개인정보 처리 방침</a></li>
+            </ul>
+          </div>
+          <div class="ft-bot">
+            <h5>(주)한국몬테소리</h5>
+            <ul>
+              <li><span>대표이사 : 김석규</span>개인정보관리 : 한춘희</li>
+              <li>사업자등록번호 : 139-81-24556</li>
+            </ul>
+            <ul>
+              <li>통신판매업신고 : 제 남동구 2003-00045호</li>
+              <li>소재지 : 인천광역시 남동구 능허대로 649번길 122</li>
+            </ul>
+            <ul>
+              <li>ⓒ Montessori Korea. All Rights Reserved.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="quick">
+          <ul class="quick__menu">
+            <li><a href="https://stage-public.montessori.co.kr/mypage/shopp/lastViewItem.do" class="rct">최근본상품</a></li>
+
+            <li><a href="https://stage-public.montessori.co.kr/mypage/shopp/likeItem.do" class="fav">즐겨찾기</a></li>
+
+            <li><button type="button" class="quick__top" onclick="scrTop();">scroll top</button></li>
+          </ul>
+        </div>
+      </footer>
+      <!-- footer -->
+    </div>
+
+    <div class="popup" id="dvry-pop1">
+      <div>
+        <div>
+          <div class="popup-box">
+            <button type="button" onclick="popClose('dvry-pop1');" class="popup-close">닫기</button>
+            <h5 class="popup-title">배송지 변경/추가</h5>
+            <div class="popup-cont">
+              <div class="tar">
+                <a href="javascript:popOpen('dvry-pop2');" class="sub-btn md inline">추가</a>
+              </div>
+              <div class="popup-addr">
+                <dl>
+                  <dt>몬테소리</dt>
+                  <dd>임정희 (01099136112)</dd>
+                  <dd>서울 서초구 강남대로 399 (서초동, 몬테소리) 7층</dd>
+                  <dd>
+                    <ul>
+                      <li><a href="javascript:modAddr('0', '7');" class="sub-btn md bk">수정</a></li>
+                      <li><a href="javascript:delAddr('7');" class="sub-btn md">삭제</a></li>
+                    </ul>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="dvry-pop2">
+      <!-- 우편번호찾기 -->
+      <div id="postlayer" class="daumpost" style="display: none">
+        <a href="javascript:closeDaumPostcode();" class="btn btn-xxs btn-select closedaumpost">X</a>
+      </div>
+
+      <div>
+        <div>
+          <div class="popup-box">
+            <button type="button" onclick="cleanAndClose();" class="popup-close">닫기</button>
+            <h5 class="popup-title">배송지 등록/수정</h5>
+
+            <form id="mform1" method="post">
+              <input type="hidden" name="addrno" id="addrno" value="" />
+              <div class="popup-cont">
+                <dl class="pop-group">
+                  <dt><label for="join-name">배송지명</label></dt>
+                  <dd>
+                    <div class="input-text">
+                      <input type="text" name="addrnm" id="addrnm" placeholder="배송지명을 입력해 주세요." />
+                      <span></span>
+                    </div>
+                  </dd>
+                </dl>
+                <dl class="pop-group">
+                  <dt><label for="join-name">받는사람</label></dt>
+                  <dd>
+                    <div class="input-text">
+                      <input type="text" name="recipient" id="recipient" placeholder="받는사람을 입력해 주세요." />
+                      <span></span>
+                    </div>
+                  </dd>
+                </dl>
+                <dl class="pop-group">
+                  <dt><label for="join-name">연락처</label></dt>
+                  <dd>
+                    <div class="input-text">
+                      <input type="text" name="addrphone" id="addrphone" placeholder="연락처를 입력해 주세요.(숫자만입력)" maxlength="11" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
+                      <span></span>
+                    </div>
+                  </dd>
+                </dl>
+                <dl class="pop-group">
+                  <dt><label for="join-addr1">주소</label></dt>
+                  <dd>
+                    <div class="join-btn">
+                      <div class="input-text">
+                        <input type="text" name="post" id="post" placeholder="우편번호" onclick="callPostApi();" readonly="" />
+                        <span></span>
+                      </div>
+                      <a href="javascript:callPostApi();" class="sub-btn bk">우편번호</a>
+                    </div>
+                  </dd>
+                  <dd>
+                    <div class="input-text">
+                      <input type="text" name="address1" id="address1" placeholder="주소를 입력해 주세요." readonly="" />
+                      <span></span>
+                    </div>
+                  </dd>
+                  <dd>
+                    <div class="input-text">
+                      <input type="text" name="address2" id="address2" placeholder="상세주소를 입력해 주세요." />
+                      <input type="hidden" name="buildingcodeIncpop" id="buildingcodeIncpop" value="" />
+                      <!-- 건물관리번호 -->
+                      <span></span>
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+            </form>
+
+            <ul class="popup-btn">
+              <li><a href="javascript:dvrySave();" class="sub-btn bk">저장</a></li>
+              <li><a href="javascript:cleanAndClose();" class="sub-btn">취소</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <iframe id="HappytalkIframe" src="https://design.happytalkio.com/button?siteId=6000000426&amp;siteName=(%EC%A3%BC)%ED%95%9C%EA%B5%AD%EB%AA%AC%ED%85%8C%EC%86%8C%EB%A6%AC&amp;categoryId=166816&amp;divisionId=166817&amp;params=&amp;partnerId=&amp;shopId=" allowtransparency="true" frameborder="0" title="채팅상담" tabindex="0" style="color-scheme: light; margin: 0px; z-index: 999999999; width: 68px; height: 68px; position: fixed; left: auto; right: 20px; bottom: 80px"></iframe>
+  </body>
+</html>
