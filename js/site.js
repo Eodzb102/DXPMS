@@ -84,6 +84,12 @@ $(function () {
 
   $('.option_cancel button').on('click', function () {
     $('.option_filter_item').removeClass('selected');
+    $('.filter_item_selected').text('');
+  });
+
+  $('.option_filter_item li input').on('click', function () {
+    $(this).closest('.option_filter_item').addClass('selected');
+    $(this).closest('.option_filter_item').find('.filter_item_selected').text(`: ${text}`);
   });
 
   function updateView() {
